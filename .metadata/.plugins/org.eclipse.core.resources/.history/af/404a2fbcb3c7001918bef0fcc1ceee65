@@ -1,0 +1,19 @@
+package kr.green.net;
+
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.Scanner;
+
+public class ViewWebSource {
+	public static void main(String[] args) {
+		URL url = null;
+		try {
+			url = new URL("https://www.naver.com");
+			Scanner sc = new Scanner(url.openStream(), "UTF-8");
+			
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}

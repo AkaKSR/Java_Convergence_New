@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>링크 색상/모양</title>
+<style type="text/css">
+a:link { color: black; text-decoration: none; }
+</style>
+</head>
+<body>
+
+</body>
+</html>

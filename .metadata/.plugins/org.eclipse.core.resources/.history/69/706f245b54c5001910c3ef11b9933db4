@@ -1,0 +1,15 @@
+/*
+ * 깊은 복사 : 내용 복사
+ * 얕은 복사 : 주소 복사
+ */
+
+package kr.green.list;
+
+public class CopyEx {
+	public static void main(String[] args) {
+		HanjaVO vo1 = new HanjaVO();
+		vo1.setIndex(1);
+		vo1.getH("天");
+		vo1.setK("하늘 천");
+	}
+}

@@ -1,0 +1,13 @@
+package kr.green.io;
+
+import java.io.FileWriter;
+import java.io.Writer;
+
+public class Ex01 {
+	
+	public static void main(String[] args) {
+		Writer wr = null;
+		wr = new FileWriter();
+	}
+	
+}

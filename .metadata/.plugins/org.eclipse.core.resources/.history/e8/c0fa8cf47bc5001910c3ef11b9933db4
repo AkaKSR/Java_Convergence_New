@@ -1,0 +1,9 @@
+package kr.green.vo;
+
+public class HanjaVO {
+	private int idx;
+	private int h;
+	private int k;
+	private int m;
+	
+}

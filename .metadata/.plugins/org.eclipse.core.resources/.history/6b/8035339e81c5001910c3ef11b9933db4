@@ -1,0 +1,6 @@
+package kr.green.vo;
+
+public class Code {
+	private int[] rgba;
+	private String hex;
+}

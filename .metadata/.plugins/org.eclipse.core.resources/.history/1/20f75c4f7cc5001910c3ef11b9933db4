@@ -1,0 +1,19 @@
+package kr.green.json;
+
+import java.io.FileReader;
+import java.util.List;
+
+import com.google.gson.Gson;
+
+import kr.green.vo.HanjaVO;
+
+public class JsonEx02 {
+	public static void main(String[] args) {
+		Gson gson = new Gson();
+		
+		FileReader fr = new FileReader("json/chunja.json");
+		
+		List<HanjaVO> list = gson.fromJson(, arg1) 
+		
+	}
+}

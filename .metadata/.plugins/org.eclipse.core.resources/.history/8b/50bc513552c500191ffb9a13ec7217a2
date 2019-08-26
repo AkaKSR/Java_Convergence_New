@@ -1,0 +1,13 @@
+package kr.green.list;
+
+import java.io.Serializable;
+
+public class HanjaVO implements Comparable<HanjaVO>, Serializable, Cloneable {
+	
+	@Override
+	public int compareTo(HanjaVO o) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	
+}

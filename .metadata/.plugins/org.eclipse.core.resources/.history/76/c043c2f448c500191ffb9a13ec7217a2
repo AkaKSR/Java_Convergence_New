@@ -1,0 +1,12 @@
+package kr.green.list;
+
+import java.util.ArrayList;
+
+public class ListEx3 {
+	
+	public static void main(String[] args) {
+		ArrayList<Integer> list = new ArrayList<>();
+		
+	}
+	
+}

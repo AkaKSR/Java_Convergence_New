@@ -1,0 +1,23 @@
+package kr.green.vo;
+
+public class ScoreVO {
+	private String name;
+	private int kor, eng, mat, edps, rank;
+	
+	public ScoreVO() {
+		name = "";
+		rank = 1;
+	}
+
+	public ScoreVO(String name, int kor, int eng, int mat, int edps) {
+		super();
+		this.name = name;
+		this.kor = kor;
+		this.eng = eng;
+		this.mat = mat;
+		this.edps = edps;
+	}
+	
+	
+	
+}

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>선그리기</title>
+</head>
+<body>
+	<!-- 
+	이것은 주석입니다.
+	tag는 태그명 속성="값" 으로 구성된다.
+	 -->
+	<hr />
+	<hr color="red"/>
+	<hr />
+</body>
+</html>

@@ -1,0 +1,19 @@
+/*
+ * Queue : FIFO(First In First Out) 먼저들어온 데이터를 먼저 처리할때 사용
+ */
+
+package kr.green.list;
+
+import java.util.LinkedList;
+
+public class QueueEx {
+	
+	public static void main(String[] args) {
+		LinkedList<Integer> queue = new LinkedList<>();
+		
+		queue.addLast(1);
+		queue.addLast(2);
+		queue.addLast(3);
+	}
+	
+}

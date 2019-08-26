@@ -1,0 +1,30 @@
+/*
+ * 깊은 복사 : 내용 복사
+ * 얕은 복사 : 주소 복사
+ */
+
+package kr.green.list;
+
+public class CopyEx {
+	public static void main(String[] args) {
+		HanjaVO vo1 = new HanjaVO();
+		vo1.setIndex(1);
+		vo1.setH("天");
+		vo1.setK("하늘 천");
+		System.out.println(vo1);
+		HanjaVO vo2 = vo1; // 얕은 복사
+		System.out.println(vo2); // 내용이 같다. 복사인가?
+		System.out.println();
+		
+		vo2.setH("地");
+		
+		System.out.println(vo1);
+		System.out.println(vo2); // 두개 다 복사되었다. 객체는 1개다. vo2는 vo1의 주소를 가진다.
+		
+		// 주소가 아닌 내용이 복사 되어야 한다. : 깊은 복사
+		HanjaVO vo3 = new HanjaVO();
+		vo3.setH(vo1.getH());
+		vo3.setIndex(vo1.getIndex());
+		vo3.setK(vo1.getK());
+	}
+}

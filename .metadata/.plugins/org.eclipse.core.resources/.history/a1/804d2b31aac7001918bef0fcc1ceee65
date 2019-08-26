@@ -1,0 +1,18 @@
+package kr.green.io;
+
+import java.io.Serializable;
+
+public class SomeVO implements Serializable{
+	int data;
+	@Override
+	public String toString() {
+		return "[" + data + "]";
+	}
+//	public int getData() {
+//		return data;
+//	}
+//	public void setData(int data) {
+//		this.data = data;
+//	}
+	
+}

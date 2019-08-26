@@ -1,0 +1,13 @@
+package kr.green.cf;
+
+import kr.green.vo.HanjaVO;
+
+/*
+ * 내가 만든 클래스도 Set에 저장이 가능한가?
+ */
+
+public class SetEx02 {
+	public static void main(String[] args) {
+		HanjaVO vo = new HanjaVO();
+	}
+}

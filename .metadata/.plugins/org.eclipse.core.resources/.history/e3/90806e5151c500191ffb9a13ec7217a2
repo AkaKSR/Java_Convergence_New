@@ -1,0 +1,16 @@
+package kr.green.list;
+
+import java.io.FileReader;
+import java.util.Properties;
+
+public class PropertiesEx02 {
+	public static void main(String[] args) {
+		Properties properties = new Properties();
+		
+		try {
+			properties.load(new FileReader("db.properties"));
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+}

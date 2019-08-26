@@ -1,0 +1,13 @@
+/*
+ * Stack : LIFO(Last In First Out) 자료 구조로 나중에 들어온 데이터를 먼저 처리할 경우에 사용
+ */
+
+package kr.green.list;
+
+import java.util.Stack;
+
+public class StackEx {
+	public static void main(String[] args) {
+		Stack<Integer> stack = new Stack<>();
+	}
+}

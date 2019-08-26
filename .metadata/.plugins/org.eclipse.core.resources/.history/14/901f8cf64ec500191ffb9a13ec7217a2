@@ -1,0 +1,7 @@
+package kr.green.list;
+
+public class PropertiesEx1 {
+	public static void main(String[] args) {
+		Properties prop = new Properties();
+	}
+}

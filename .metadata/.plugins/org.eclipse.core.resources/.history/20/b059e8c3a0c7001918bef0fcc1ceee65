@@ -1,0 +1,13 @@
+package kr.green.io;
+
+import java.io.FileInputStream;
+
+public class Ex02 {
+	public static void main(String[] args) {
+		 try(FileInputStream fis = new FileInputStream("ex01.dat")) {
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+}

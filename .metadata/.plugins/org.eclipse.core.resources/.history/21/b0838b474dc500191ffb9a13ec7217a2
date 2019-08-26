@@ -1,0 +1,11 @@
+package kr.green.list;
+
+import java.util.Hashtable;
+
+public class MapEx1 {
+	
+	public static void main(String[] args) {
+		Map<Integer, String> map = new Hashtable<>();
+	}
+	
+}

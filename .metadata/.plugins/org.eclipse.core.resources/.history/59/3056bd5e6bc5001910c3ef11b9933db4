@@ -1,0 +1,8 @@
+package kr.green.vo;
+
+public class ScoreVO {
+	private String name;
+	private int kor, eng, mat, edps, rank;
+	private int 
+	
+}

@@ -1,0 +1,19 @@
+package kr.green.io;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+public class Ex02 {
+	public static void main(String[] args) {
+		 try(FileInputStream fis = new FileInputStream("ex01.dat")) {
+			 System.out.println(fis.read());
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
+	}
+}

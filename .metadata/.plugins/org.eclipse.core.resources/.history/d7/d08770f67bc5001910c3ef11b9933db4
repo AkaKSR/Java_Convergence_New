@@ -1,0 +1,38 @@
+package kr.green.vo;
+
+public class HanjaVO {
+	private int idx;
+	private int h;
+	private int k;
+	private int m;
+	
+	public int getIdx() {
+		return idx;
+	}
+	public void setIdx(int idx) {
+		this.idx = idx;
+	}
+	public int getH() {
+		return h;
+	}
+	public void setH(int h) {
+		this.h = h;
+	}
+	public int getK() {
+		return k;
+	}
+	public void setK(int k) {
+		this.k = k;
+	}
+	public int getM() {
+		return m;
+	}
+	public void setM(int m) {
+		this.m = m;
+	}
+	
+	@Override
+	public String toString() {
+		return idx + ". " + h + "(" + m + ")";
+	}
+}

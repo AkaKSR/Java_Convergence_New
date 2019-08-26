@@ -1,0 +1,6 @@
+package kr.green.io;
+
+public class SomeVO {
+	int data;
+	
+}

@@ -1,0 +1,62 @@
+/*
+ * 직렬화 : 객체를 스트림으로 만든다.
+ * 역직렬화 : 스트림을 객체로 조립한다.
+ * 
+ * 자바에서는 직렬화/역직렬화를 지원하는 Serializable 인터페이스가 있어서 반드시 구현해 주어야만 입출력이 가능하다.
+ */
+
+package kr.green.io;
+
+import java.io.Serializable;
+
+public class PersonVO implements Serializable, Cloneable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -6845214504901434178L;
+	private String name;
+	private int age;
+	private boolean gender;
+	
+	public PersonVO() {
+		this("무명", 0, true);
+	}
+
+	public PersonVO(String name, int age, boolean gender) {
+		super();
+		this.name = name;
+		this.age = age;
+		this.gender = gender;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	public boolean isGender() {
+		return gender;
+	}
+
+	public void setGender(boolean gender) {
+		this.gender = gender;
+	}
+
+	@Override
+	public String toString() {
+		return name + "(" + age + "세, " + (gender?"남":"여") + ")";
+	}
+
+	
+}

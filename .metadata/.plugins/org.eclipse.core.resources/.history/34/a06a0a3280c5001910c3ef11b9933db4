@@ -1,0 +1,39 @@
+package kr.green.json;
+
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
+import java.net.MalformedURLException;
+import java.net.URL;
+
+import com.google.gson.Gson;
+
+import kr.green.vo.BoxOfficeVO;
+import kr.green.vo.DailyBoxOfficeList;
+
+public class ViewBoxOffice {
+	public static void main(String[] args) {
+		try {
+			URL url = new URL("http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=430156241533f1d058c603178cc3ca0e&targetDt=20190822");
+			Gson gson = new Gson();
+			InputStreamReader isr = new InputStreamReader(url.openStream(), "UTF-8");
+			BoxOfficeVO boxOffice = gson.fromJson(isr, BoxOfficeVO.class);
+			
+			System.out.println(boxOffice.getBoxOfficeResult().getBoxofficeType());
+			System.out.println(boxOffice.getBoxOfficeResult().getShowRange());
+			for (DailyBoxOfficeList d : boxOffice.getBoxOfficeResult().getDailyBoxOfficeList()) {
+				System.out.print(d.getRank() + " : ");
+				System.out.print(d.getMovieNm() + "(");
+				System.out.print(d.getOpenDt() + ")");
+			}
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}

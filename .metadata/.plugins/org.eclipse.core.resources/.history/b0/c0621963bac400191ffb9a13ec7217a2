@@ -1,0 +1,6 @@
+package kr.green.vo;
+
+public class Some {
+	private int i = 0;
+	
+}

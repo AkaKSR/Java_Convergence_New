@@ -1,0 +1,11 @@
+package kr.green.cf;
+
+import java.util.Scanner;
+
+public class TextReadEx {
+	
+	public static void main(String[] args) {
+		Scanner sc = new Scanner("chunja.txt");
+	}
+	
+}

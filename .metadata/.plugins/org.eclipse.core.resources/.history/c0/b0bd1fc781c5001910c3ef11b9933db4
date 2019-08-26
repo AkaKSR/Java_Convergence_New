@@ -1,0 +1,8 @@
+package kr.green.vo;
+
+public class Colors {
+	private String color;
+	private String category;
+	private String type;
+	private Code code;
+}

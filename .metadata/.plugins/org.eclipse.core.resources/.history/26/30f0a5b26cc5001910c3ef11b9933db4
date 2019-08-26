@@ -1,0 +1,9 @@
+package kr.green.io;
+
+import java.util.List;
+
+public class ScoreEx {
+	public static void main(String[] args) {
+		List<ScoreVO> list = new ArrayList<ScoreVO>();
+	}
+}

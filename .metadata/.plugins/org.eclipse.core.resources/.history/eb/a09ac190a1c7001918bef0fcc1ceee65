@@ -1,0 +1,15 @@
+package kr.green.io;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+
+public class FileCopy {
+	public static void main(String[] args) {
+		String inFile, outFile;
+		FileInputStream fis = null;
+		FileOutputStream fos = null;
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.print("원본 파일 이름 입력: ");
+	}
+}

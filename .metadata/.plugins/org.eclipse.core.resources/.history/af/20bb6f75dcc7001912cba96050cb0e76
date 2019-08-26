@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>링크 색상/모양</title>
+<style type="text/css">
+a:link { color: red; text-decoration: none; }
+a:visited { color: pink; text-decoration: none; }
+a:hover { color: skyblue; text-decoration: none; }
+a:active { color: red; text-decoration: none; }
+</style>
+</head>
+<body>
+<a href="#">링크</a>
+</body>
+</html>

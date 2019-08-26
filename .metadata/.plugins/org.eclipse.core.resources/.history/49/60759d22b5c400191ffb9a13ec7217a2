@@ -1,0 +1,18 @@
+package kr.green.cf;
+
+import java.util.HashSet;
+import java.util.Set;
+
+import kr.green.vo.HanjaVO;
+
+/*
+ * 내가 만든 클래스도 Set에 저장이 가능한가?
+ */
+
+public class SetEx02 {
+	public static void main(String[] args) {
+		Set<HanjaVO> hanjaSet = new HashSet<>();
+		
+		hanjaSet.add(new HanjaVO(1, "天", "천", "하늘 천"));
+	}
+}

@@ -1,0 +1,10 @@
+/*
+ * 문자단위 입력 : Reader객체가 최고 조상
+ * 문자단위 출력 : Writer객체가 최고 조상
+ */
+
+package kr.green.io;
+
+public class Ex03 {
+
+}

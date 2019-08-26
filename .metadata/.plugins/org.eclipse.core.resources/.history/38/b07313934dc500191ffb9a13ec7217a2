@@ -1,0 +1,33 @@
+package kr.green.list;
+
+import java.util.Hashtable;
+import java.util.Map;
+import java.util.Set;
+
+public class MapEx1 {
+	
+	public static void main(String[] args) {
+		Map<Integer, String> map = new Hashtable<>();
+		
+		map.put(1, "한사람");
+		map.put(2, "두사람");
+		map.put(3, "세사람");
+		map.put(4, "네사람");
+		map.put(3, "오사람");
+		map.put(4, "육사람");
+		
+		System.out.println(map);
+		
+		// 꺼내기
+		String data = map.get(4);
+		System.out.println(data);
+		
+		Set<Integer> keys = map.keySet(); // 키는 Set이다.
+		for (int key : keys) {
+			System.out.println(key + " : " + map.get(key));
+		}
+		
+		// 값만
+	}
+	
+}

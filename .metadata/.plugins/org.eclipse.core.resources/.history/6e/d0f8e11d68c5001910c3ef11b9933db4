@@ -1,0 +1,17 @@
+/*
+ * 문자단위 입력 : Reader객체가 최고 조상
+ * 문자단위 출력 : Writer객체가 최고 조상
+ */
+
+package kr.green.io;
+
+import java.io.FileReader;
+import java.io.Reader;
+
+public class Ex03 {
+	public static void main(String[] args) {
+		Reader fr = null;
+		
+		fr = new FileReader("text02.txt");
+	}
+}

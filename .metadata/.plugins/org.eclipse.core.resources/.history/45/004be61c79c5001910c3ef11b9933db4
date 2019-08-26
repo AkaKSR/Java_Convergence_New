@@ -1,0 +1,23 @@
+package kr.green.json;
+
+import com.google.gson.Gson;
+
+public class JsonEx01 {
+	public static void main(String[] args) {
+		String data = "[11,22,33,44,55,66]";
+		// Gson을 사용하지 않고 위의 데이터를 정수 배열로 사용하겠다.
+		int ar[] = new int[6];
+		String data2 = data.substring(1, data.length()-1);
+		
+		System.out.println(data2);
+		
+		data2.split(",");
+		
+		System.out.println(data2);
+		
+		Gson gson = new Gson();
+		
+		// 읽을때는 from, 저장할때는 to
+		
+	}
+}

@@ -1,0 +1,9 @@
+package kr.green.net;
+
+import java.net.URL;
+
+public class ViewWebSource {
+	public static void main(String[] args) {
+		URL url = new URL("www.naver.com");
+	}
+}
