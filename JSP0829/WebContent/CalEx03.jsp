@@ -135,6 +135,9 @@ th {
 	</table>
 	<table>
 		<tr>
+			<td>해당 날짜로 이동</td>
+		</tr>
+		<tr>
 			<td>
 				<form action="">
 					<input type="text" name="yy" size="5">년 
