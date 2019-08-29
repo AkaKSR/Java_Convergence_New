@@ -1,0 +1,201 @@
+JOptionPane의 대표적인 정적 메소드 함수(static methods)들로 
+확인창, 알림창, 질문창 등을 띄울 수 있습니다.
+
+showMessageDialog : 단순 알림창(경고창, 메시지 박스)을 띄웁니다.
+showConfirmDialog : 확인창(예/아니오, 확인/취소 등)을 띄웁니다.
+showInputDialog   : 질문창을 띄웁니다. 간단한 입력 결과를 받습니다.
+showOptionDialog  : 확인창과 비슷한데, 예/아니오 대신 선택 버튼의 말을 직접 정해줄 수 있습니다.
+
+showMessageDialog
+-----------------
+메시지 다이얼로그는 리턴값이 없습니다(void 형). 
+역시 JOptionPane 클래스 패키지를 import 해야합니다. 
+자바 소스 코드 최상단에 다음 import 문을 추가합니다.
+
+import javax.swing.JOptionPane;
+
+
+※ showMessageDialog 메소드 함수 형태
+
+- 리턴 함수 타입 : public static void (되돌려 주는 값이 없습니다)
+showMessageDialog( Component parentComponent, Object message )
+showMessageDialog( Component parentComponent, Object message, String title, int messageType )
+showMessageDialog( Component parentComponent, Object message,
+　　　　　　　　　 String title, int messageType, Icon icon )
+
+※ 매개변수(파라메터, Parameter) 설명
+- Component parentComponent
+  메시지창 다이얼로그가 어떤 부모의 위치에 나타나게 될 것인지를 정해주는 변수. 
+
+- Object message
+  출력할 Object 클래스형 개체. 주로 문자열 메시지를 출력할 것이므로, 
+  간단하게 그냥 출력할 문자열 자체를 써주면 됩니다. 
+  문자열을 여러줄에 걸쳐서 표현하고 싶다면 newline에 해당하는 escape 문자열(" \n ")을 써주면됩니다.
+
+- String title
+  메시지창 상단 제목표시줄에 나타낼 알림창 제목입니다.
+
+- int messageType
+  알림창의 메시지 종류를 정해줍니다. 여기서 정해주는 메시지 종류에 따라 자동으로 
+  지정된 아이콘이 표시됩니다. 자세한 설정 방법은 아래와 같습니다.
+
+
+showConfirmDialog
+--------------------
+※ showConfirmDialog 메소드 함수 형태
+- 리턴값(static int) : 사용자의 확인 버튼 선택값을 되돌려줍니다.
+CLOSED_OPTION - 종료(X) 버튼으로 창을 닫은 경우. CANCEL / NO와 비슷하게 처리해줘야합니다.
+YES_OPTION - 예(YES) 버튼 선택시 리턴값
+NO_OPTION - 아니오(NO) 버튼 선택시
+CANCEL_OPTION - 취소(CANCEL) 버튼 선택시
+OK_OPTION - 확인(OK) 버튼 선택시
+
+- 메소드 함수 형태 종류
+showConfirmDialog( Component parentComponent, Object message )
+showConfirmDialog( Component parentComponent, Object message, String title, int optionType)
+showConfirmDialog( Component parentComponent, Object message, String title, int optionType,
+　　　　　　　　　int messageType )
+showConfirmDialog( Component parentComponent, Object message, String title, int optionType,
+　　　　　　　　　int messageType, Icon icon )
+
+※ 매개변수(파라메터, Parameter) 설명
+- Component parentComponent
+  메시지창 다이얼로그가 어떤 Frame에서 나타나게 될 것인지를 정해주는 변수. 
+  null 값이거나 설정해준 값에 Frame이 없다면 기본값 Frame(default Frame)이 지정됩니다. 
+  쉽게 null 로 둬도 될 것 같네요.
+  
+- Object message
+ 출력할 Object 클래스형 개체. 주로 문자열 메시지를 출력할 것이므로, 
+ 간단하게 그냥 출력할 문자열 자체를 써주면 됩니다. 
+ 문자열을 여러줄에 걸쳐서 표현하고 싶다면 newline에 해당하는 escape 문자열(" \n ")을 써주면됩니다.
+
+- String title
+  메시지창 상단 제목표시줄에 나타낼 알림창 제목입니다.
+
+- int optionType
+  사용자의 대답 선택 버튼을 어떻게 표현할 것인가 결정합니다. 
+  "예", "아니오", "취소" 버튼을 어떤 식으로 배치할 지 결정합니다.
+  YES_NO_OPTION
+  YES_NO_CANCEL_OPTION
+  OK_CANCEL_OPTION
+  
+※ 위 버튼의 텍스트(예, 아니오)를 다른 글자로 바꿀 수 있습니다. 
+   showOptionDialog를 통해서 간으한 작업으로, 자세한 건 showOptionDialog 설명글을 참고하세요!
+
+- int messageType
+  알림창의 메시지 종류를 정해줍니다. 여기서 정해주는 메시지 종류에 따라 자동으로 지정된 
+  아이콘이 표시됩니다.
+  ERROR_MESSAGE
+  INFORMATION_MESSAGE
+  WARNING_MESSAGE
+  QUESTION_MESSAGE
+  PLAIN_MESSAGE(아이콘 없음)
+
+- Icon icon
+  Icon 클래스를 통해서 직접 정해줄 수도 있습니다. 
+  
+  
+showInputDialog
+===============
+showInputDialog 메소드 함수 형태
+- 리턴값(static String) : 사용자가 입력 질문란 텍스트필드(TextField)에 입력한 값을 문자열(String Class)로 되돌려줍니다.
+
+- 메소드 함수 형태 종류
+showInputDialog( Object message )
+showInputDialog( Object message, Object initialSelectionValue)
+showInputDialog( Component parentComponent, Object message )
+showInputDialog( Component parentComponent, Object message, Object initialSelectionValue)
+showInputDialog( Component parentComponent, Object message, String title, int messageType )
+showInputDialog( Component parentComponent, Object message, String title, int messageType, 
+                 Icon icon, Object[] selectionValues, Object initialSelectionValue )
+
+※ 매개변수(파라메터, Parameter) 설명
+
+- Component parentComponent
+  메시지창 다이얼로그가 어떤 Frame에서 나타나게 될 것인지를 정해주는 변수. 
+  
+- Object message
+  출력할 Object 클래스형 개체. 주로 문자열 메시지를 출력할 것이므로, 
+  간단하게 그냥 출력할 문자열 자체를 써주면 됩니다. 
+  문자열을 여러줄에 걸쳐서 표현하고 싶다면 newline에 해당하는 escape 문자열(" \n ")을 써주면됩니다.
+
+- Object initialSelectionValue
+  입력란에 나타낼 초기 문자열 값입니다. 
+  사용자가 입력하지 않아도 초기값으로 텍스트필드에 표시해줄 문자열 값을 미리 정해줄 수 있습니다.
+
+- String title
+  메시지창 상단 제목표시줄에 나타낼 알림창 제목입니다.
+
+- int messageType
+  ERROR_MESSAGE
+  INFORMATION_MESSAGE
+  WARNING_MESSAGE
+  QUESTION_MESSAGE
+  PLAIN_MESSAGE(아이콘 없음)
+
+- Icon icon
+  Icon 클래스를 통해서 직접 정해줄 수도 있습니다.
+  
+- Object[] selectionValues
+  입력창을 사용자가 직접 답변을 작성하는 대신에, 콤보 박스를 통해서 선택할 수 있도록 합니다.
+  문자열 배열(String Class의 배열값)을 넣어주면, 해당 문자열 값 중에서 하나를 선택하게 합니다. 자세한 사용 예제는 아래 사용 예제에서 보여드리겠습니다.
+
+  
+showOptionDialog
+----------------
+※ showOptionDialog 메소드 함수 형태
+- 리턴값(static int) : 사용자의 확인 버튼 선택값을 되돌려줍니다.
+  CLOSED_OPTION - 종료(X) 버튼으로 창을 닫은 경우. CANCEL / NO와 비슷하게 처리해줘야합니다.
+  YES_OPTION - 예(YES) 버튼 선택시 리턴값
+  NO_OPTION - 아니오(NO) 버튼 선택시
+  CANCEL_OPTION - 취소(CANCEL) 버튼 선택시
+  OK_OPTION - 확인(OK) 버튼 선택시
+
+- 메소드 함수 형태
+  showOptionDialog( Component parentComponent, Object message, String title, 
+                    int optionType, int messageType, Icon icon,
+                    Object[] options, Object initialValue)
+
+
+※ 매개변수(파라메터, Parameter) 설명
+- Component parentComponent
+  부모 컴포넌트 
+
+- Object message
+  출력할 Object 클래스형 개체. 주로 문자열 메시지를 출력할 것이므로, 
+  간단하게 그냥 출력할 문자열 자체를 써주면 됩니다. 
+  문자열을 여러줄에 걸쳐서 표현하고 싶다면 newline에 해당하는 escape 문자열(" \n ")을 써주면됩니다.
+
+- String title
+  메시지창 상단 제목표시줄에 나타낼 알림창 제목입니다.
+
+- int optionType
+  사용자의 대답 선택 버튼을 어떻게 표현할 것인가 결정합니다. 
+  "예", "아니오", "취소" 버튼을 어떤 식으로 배치할 지 결정합니다.
+  YES_NO_OPTION
+  YES_NO_CANCEL_OPTION
+  OK_CANCEL_OPTION
+
+- int messageType
+  알림창의 메시지 종류를 정해줍니다. 
+  여기서 정해주는 메시지 종류에 따라 자동으로 지정된 아이콘이 표시됩니다.
+  ERROR_MESSAGE
+  INFORMATION_MESSAGE
+  WARNING_MESSAGE
+  QUESTION_MESSAGE
+  PLAIN_MESSAGE(아이콘없음)
+
+- Icon icon
+  Icon 클래스를 통해서 직접 정해줄 수도 있습니다. 
+
+- Object[] options
+  예, 아니오, 취소(YES,NO,CANCEL) 버튼에, 다른 문자를 넣습니다. 
+  문자열 배열 3개 짜리로 각 문자열을 지정해줄 경우, 
+  YES/NO/CANCEL 대신 지정해둔 문자가 버튼으로 출력됩니다. 
+  자세한 사용 예제는 아래를 참고하세요.
+
+- Object initialSelectionValue
+  여러개의 버튼 중 어느 버튼을 초기값으로 선택해 줄 것인지 결정합니다. 
+  확인창이 처음 뜰 때, 보통 점선으로 표시된 기본 커서가 어느 버튼 중 하나에 올라가 있죠. 
+  그 위치를 정해줍니다.
+  

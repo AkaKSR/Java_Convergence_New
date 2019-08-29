@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="D:/Java/Study/Java_Convergence_New/SwingProject/Lib/idw-gpl.jar"/>
+	<classpathentry kind="lib" path="D:/Java/Study/Java_Convergence_New/SwingProject/Lib/JTattoo.jar"/>
+	<classpathentry kind="lib" path="D:/Java/Study/Java_Convergence_New/SwingProject/Lib/liquidlnf.jar"/>
+	<classpathentry kind="lib" path="D:/Java/Study/Java_Convergence_New/SwingProject/Lib/quaqua.jar"/>
+	<classpathentry kind="lib" path="D:/Java/Study/Java_Convergence_New/SwingProject/Lib/thumbnailator-0.4.7.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

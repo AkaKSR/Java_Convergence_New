@@ -1,0 +1,87 @@
+<!--
+form = 서버와 통신하기 위한 폼
+fieldset = 폼 안에 상자 만드는 태그
+legend = 상자의 이름을 정하는 태그
+input = 입력상자 만드는 태그
+ └ type = input의 타입 지정
+ └ name = input의 이름 지정
+ └ size = 사이즈 지정
+ └ onkeyup = 키를 눌럿다 때면 발동하는 이벤트(자바스크립트)
+
+script = HTML안에 자바스크립트를 사용할수 있게 해주는 태그
+ └ function = 메소드 선언
+ex)
+function moveNext(obj,length,nextObj) {
+		if (obj.value.length == length) {
+			document.getElementById(nextObj).focus();
+		}
+	}
+	
+HTML5 전용
+placeholder, required
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>폼태그 연습</title>
+<script type="text/javascript">
+	// obj의 길이가 length와 같을때 nextObj로 이동해라
+	function moveNext(obj,length,nextObj) {
+		if (obj.value.length == length) {
+			document.getElementById(nextObj).focus();
+		}
+	}
+</script>
+</head>
+<body>
+	<form action="서버에서 받아줄 파일명" method="get">
+		<fieldset>
+			<legend>폼 연습</legend>
+			아이디 : <input type="text" name="userid" size="30" placeholder="이름을 입력하세요." required="required"/><br>
+			비밀번호 : <input type="password" name="password" size="50"/><br>
+			주민번호 : 
+			<input type="text" name="j1" size="7" maxlength="6"  onkeyup="moveNext(this, 6, 'j2')"> - 
+			<input type="password" name="j2" size="7" maxlength="7" id="j2"><br>
+			성별 :
+			<input type="radio" value="m" name="gender" id="m">
+			<label for="m">남자</label>
+			<input type="radio" value="w" name="gender" id="w" checked="checked">
+			<label for="w">여자</label><br>
+			취미 :
+			<label>
+			<input type="checkbox" name="hobby" id="hobby" value="1"/>
+			숨쉬기
+			</label>
+			<label>
+			<input type="checkbox" name="hobby" id="hobby" value="2"/>
+			고성방가
+			</label>
+			<label>
+			<input type="checkbox" name="hobby" id="hobby" value="3"/>
+			잠자기
+			</label>
+			<label>
+			<input type="checkbox" name="hobby" id="hobby" value="4"/>
+			놀기
+			</label><br>
+			결혼 : 
+			<select name="mm" id="mm"> <!-- 콤보박스 생성 -->
+				<option value="1">기혼</option>
+				<option value="2" selected="selected">미혼</option>
+			</select><br>
+			가입인사 <br>
+			<textarea rows="10" cols="50" name="comment" id="comment"></textarea><br> <!-- TextArea 생성 -->
+			<input type="reset" value="다시쓰기"> <!-- 폼내용 모두 지우기 -->
+			<input type="submit" value="회원가입"> <!-- 전송 -->
+			<input type="button" value="돌아가기"> <!-- 모양만 버튼 -->
+			<button>홈으로</button><br> <!-- 전송이 이루어진다.(submit) -->
+			<input type="image" src="button.jpg"><br> <!-- 전송이 이루어진다.(submit) -->
+			첨부파일 : 
+			<input type="file" name="file" id="file"><br>
+			<input type="hidden" name="page" value="12"><br> <!-- 보이지 않지만 전송은 된다. -->
+		</fieldset>
+	</form>
+</body>
+</html>

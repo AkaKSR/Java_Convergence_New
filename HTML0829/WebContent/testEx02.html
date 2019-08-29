@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>회원가입 폼</title>
+</head>
+<body>
+	<form action="">
+		<table style="width: 700px; margin: auto;">
+			<caption style="font-size: 30px;">회원가입</caption>
+			<tr>
+				<td>아이디</td>
+				<td colspan="2"><input type="text" name="userid" id="userid"
+					maxlength="20" required="required"> <input type="button"
+					name="checkid" id="checkid" value="중복확인"></td>
+			</tr>
+			<tr>
+				<td>비밀번호</td>
+				<td><input type="password" name="password" id="password"
+					maxlength="20" required="required"></td>
+			</tr>
+			<tr>
+				<td>비밀번호 확인</td>
+				<td colspan="2"><input type="password" name="checkPassword"
+					id="checkPassword" maxlength="20" required="required"> <span
+					style="font-size: 14px;">*비밀번호를 다시 입력하여주세요</span></td>
+			</tr>
+			<tr>
+				<td>성명</td>
+				<td><input type="text" name="name" id="name"
+					required="required"></td>
+			</tr>
+			<tr>
+				<td>성별</td>
+				<td><label> <input type="radio" name="gender" id="m"
+						checked="checked"> 남자 <input type="radio" name="gender"
+						id="w"> 여자
+				</label></td>
+			</tr>
+			<tr>
+				<td>이메일</td>
+				<td><input type="text" name="mail" id="mail">@<input
+					type="text" name="mail" id="mail"> <select name="mm"
+					id="mm">
+						<option value="1" selected="selected">직접입력</option>
+						<option value="2">naver.com</option>
+						<option value="3">daum.net</option>
+						<option value="4">nate.com</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td>주소</td>
+				<td><input type="text" name="address" id="address" size="30">
+					<input type="button" name="searchAddress" id="searchAddress"
+					value="주소찾기"></td>
+			</tr>
+			<tr>
+				<td>상세주소</td>
+				<td><input type="text" name="extendAddress" id="extendAddress"
+					size="45"></td>
+			</tr>
+			<tr>
+				<td rowspan="2">휴대폰</td>
+				<td><label> <input type="radio" name="mobile" id="skt"
+						checked="checked"> SKT
+				</label> <label> <input type="radio" name="mobile" id="ktf">
+						KTF
+				</label> <label> <input type="radio" name="mobile" id="lgu">
+						LGU+
+				</label> <label> <input type="checkbox" name="mvpo" id="mvpo">
+						알뜰폰
+				</label></td>
+			</tr>
+			<tr>
+				<td><select name="mobileNumFirst" id="mobileNumFirst">
+						<option value="010" selected="selected">010</option>
+						<option value="011">011</option>
+						<option value="017">012</option>
+				</select> <input type="text" name="mobileNumMiddle" id="mobileNumMiddle"
+					maxlength="4" size="2"> - <input type="text"
+					name="mobileNumLast" id="mobileNumLast" maxlength="4" size="2">
+				</td>
+			</tr>
+			<tr>
+				<td>관심</td>
+				<td><label> <input type="radio" name="hobby" id="hobby"
+						checked="checked">수입차
+				</label> <label> <input type="radio" name="hobby" id="hobby">국산차
+				</label> <label> <input type="radio" name="hobby" id="hobby">SUV
+				</label> <label> <input type="radio" name="hobby" id="hobby">경차
+				</label> <label> <input type="radio" name="hobby" id="hobby">LPG
+				</label></td>
+			</tr>
+			<tr>
+				<td>자기소개</td>
+				<td><textarea rows="10" cols="50" name="comment" id="comment"></textarea>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center"><input type="submit"
+					name="submit" id="submit" value="가입하기"> <input type="reset"
+					name="reset" id="reset" value="다시 입력"></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

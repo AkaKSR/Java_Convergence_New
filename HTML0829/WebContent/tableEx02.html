@@ -1,0 +1,53 @@
+<!--
+caption = 표의 제목
+colgroup = col들의 그룹이며 사이즈나 스타일 지정시 사용
+ └ col width = 가로 사이즈 지정
+ └ col height = 세로 사이즈 지정
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<table border="1" style="width: 500px; height: 200px; margin: auto;">
+		<caption>나는 무엇일까요?</caption>
+		<colgroup>
+			<col width="20%">
+			<col width="40%">
+			<col width="60%">
+		</colgroup>
+		<tr>
+			<td colspan="3">내용 01</td>
+		</tr>
+		<tr>
+			<td>내용 01</td>
+			<td>내용 02</td>
+			<td>내용 03</td>
+		</tr>
+		<tr>
+			<td>내용 01</td>
+			<td>내용 02</td>
+			<td>내용 03</td>
+		</tr>
+		<tr>
+			<td colspan="3">내용 01</td>
+		</tr>
+		<tr>
+			<td>내용 01</td>
+			<td>내용 02</td>
+			<td>내용 03</td>
+		</tr>
+		<tr>
+			<td rowspan="2">내용 01</td>
+			<td>내용 02</td>
+			<td>내용 03</td>
+		</tr>
+		<tr>
+			<td>내용 02</td>
+			<td>내용 03</td>
+		</tr>
+	</table>
+</body>
+</html>
