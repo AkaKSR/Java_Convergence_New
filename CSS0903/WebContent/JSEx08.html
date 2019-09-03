@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>주민번호 검사하기</title>
+<script type="text/javascript">
+	function moveNext(obj,length,nextObj) {
+		// obj 값의 길이가 length이면 nextObj로 이동해라
+		var value = obj.value; // 값을 가져온다.
+		if (value != null && value.trim().length == length) {
+			document.getElementById(nextObj).focus();
+		}
+	}
+	function checkJuminNo() {
+		var j1 = document.getElementById('j1').value; // 값얻기
+		j1 = j1.trim(); // 좌우 공백 삭제
+		if (j1.length!=6) { // 길이 검사
+			alert('주민번호 앞자리는 6자리이어야 합니다.'); // 경고창
+			document.getElementById('j1').value = ""; // 값 지우기
+			document.getElementById('j1').focus(); // 커서 위치
+			return; // 종료
+		}
+		// 숫자로만 이루어 졌는지 검사
+		if (isNaN(j1)) { // isNaN = is Not a Number
+			alert('주민번호 앞자리는 숫자로만 이루어져야 합니다.'); // 경고창
+			document.getElementById('j1').value = ""; // 값 지우기
+			document.getElementById('j1').focus(); // 커서 위치
+			return; // 종료
+		}
+		var j2 = document.getElementById('j2').value; // 값얻기
+		j2 = j2.trim(); // 좌우 공백 삭제
+		if (j2.length!=7) { // 길이 검사
+			alert('주민번호 뒷자리는 7자리이어야 합니다.'); // 경고창
+			document.getElementById('j2').value = ""; // 값 지우기
+			document.getElementById('j2').focus(); // 커서 위치
+			return; // 종료
+		}
+		// 숫자로만 이루어 졌는지 검사
+		if (isNaN(j2)) { // isNaN = is Not a Number
+			alert('주민번호 뒷자리는 숫자로만 이루어져야 합니다.'); // 경고창
+			document.getElementById('j2').value = ""; // 값 지우기
+			document.getElementById('j2').focus(); // 커서 위치
+			return; // 종료
+		}
+		// 여기까지 내려왔다는 것은 숫자로 13자리가 입력되었다는 것이다.
+		var jj = j1+j2;
+		// 유효성 검사
+		var sum = 0;
+		for (var i = 0; i < 12; i++) sum += (jj.charAt(i)*1) * (i%8+2);
+		sum = (11-(sum%11))%10;
+		if (sum==jj.charAt(12)) {
+			alert(jj + "는 맞는 주민번호!!");
+		} else {
+			alert(jj + "는 틀린 주민번호!!");
+		}
+	}
+</script>
+</head>
+<body>
+	<input type="text" size="7" maxlength="6" id="j1" onkeyup="moveNext(this,6,'j2')">
+	-
+	<input type="text" size="7" maxlength="7" id="j2" onkeyup="moveNext(this,7,'chkBtn')">
+	<button onclick="checkJuminNo()" id="chkBtn">주민번호 유효성 검사하기</button>
+</body>
+</html>

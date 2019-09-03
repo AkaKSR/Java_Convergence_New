@@ -1,7 +1,0 @@
-package kr.green.vo;
-
-public class BoxOfficeResult {
-	private String boxofficeType;
-	private String showRange;
-	private DailyBoxOfficeList dailyBoxOfficeList;
-}

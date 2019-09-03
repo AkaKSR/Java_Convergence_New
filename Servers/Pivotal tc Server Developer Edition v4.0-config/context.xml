@@ -12,4 +12,5 @@
             <Valve className="org.apache.catalina.valves.CometConnectionManagerValve" />
             -->
     <WatchedResource>${catalina.base}/conf/web.xml</WatchedResource>
+    <Resources cachingAllowed="false" cacheMaxSize=" 0"></Resources>
 </Context>

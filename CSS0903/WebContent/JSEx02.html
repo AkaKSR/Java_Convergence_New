@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var name = prompt('이름이 뭐니?', '홍길동'); // 입력창
+	alert('반갑습니다 ' + name + "씨"); // 경고창
+	function exitFunction() {
+		if (confirm("정말 끝낼껴?")) { // 확인/취소 창
+			self.close(); // 창닫기 (window.close(); 를 써도 된다.)
+		}
+	}
+</script>
+</head>
+<body>
+	<button onclick="exitFunction();">창닫기</button>
+</body>
+</html>

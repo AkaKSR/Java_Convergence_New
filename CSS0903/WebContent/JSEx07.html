@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var fn = function() { alert('ㅎㅎㅎㅎ'); }
+	alert(typeof fn); // fucntion도 타입이다.
+	alert(fn); // 함수의 내용이 보임
+	alert(alert); // 내장 함수는 보여주지 않는다.
+	
+	alert = 123; // 내장 함수에 다른 값을 대입
+	// alert(alert); // 이제 alert는 함수가 아니라 123이다. 123(123)으로 인식해서 에러
+	
+	document.write("alert = " + alert);
+</script>
+</head>
+<body>
+
+</body>
+</html>

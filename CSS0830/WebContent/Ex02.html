@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Selector</title>
+<style type="text/css">
+/* 전체 선택자 */
+* {
+	font-weight: bold;
+}
+/* 태그 선택자 */
+p {
+	color: blue;
+}
+/* 속성 선택자 */
+p[title] { /* 속성이 있을때 */
+	color: red;
+}
+
+p[title='qwerty'] { /* 속성과 값이 일치할때 */
+	color: greed;
+}
+/* 특정 단어와 일치하거나 특정 단어 뒤에 바로 -가 있는 요소를 선택 */
+p[title~='asdf'] {
+	color: brown;
+}
+
+p[title|='asdf'] {
+	text-decoration: underline;
+}
+
+p[title^='as'] { /* 속성값이 as로 시작하는*/
+	text-decoration: underline overline;
+}
+
+p[title$='df'] { /* 속성값이 특정 문자열로 끝나는 요소 */
+	background-color: pink;
+}
+
+p[title*='ert'] { /* 속성값이 특정 문자열을 포함하는 요소 */
+	font-size: 16pt;
+}
+</style>
+</head>
+<body>
+	<p>나는 문단입니다.</p>
+	<p title="여기는 글씨를 쓰면 풍선도움말이 나온다.">나는 문단입니다.</p>
+	<p title="qwerty">나는 문단입니다.</p>
+	<p title="asdfgh asdf">나는 문단입니다.</p>
+	<p title="asdf-gh asdfqwerty">나는 문단입니다.</p>
+	<p title="asdf">나는 문단입니다.</p>
+</body>
+</html>

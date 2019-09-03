@@ -1,0 +1,35 @@
+<%@page import="kr.green.pool.service.JsonUtil"%>
+<%@page import="kr.green.pool.vo.PollVO"%>
+<%@page import="java.io.InputStream"%>
+<%@page import="java.io.InputStreamReader"%>
+<%@page import="com.google.gson.Gson"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JSON파일 읽기</title>
+</head>
+<body>
+	<%
+		Gson gson = new Gson();
+		// 서버의 절대경로 알아내기
+		String path = application.getRealPath("./poll.json");
+		// out.println(path);
+		// 서버의 파일을 스트림으로 얻기
+		InputStream is = application.getResourceAsStream("./poll.json");
+		// 스트림을 이용하여 gson에서 사용가능하도록 InputStreamReader 객체 생성
+		InputStreamReader isr = new InputStreamReader(is);
+		// PollVO로 읽기 실행
+		PollVO vo = gson.fromJson(isr, PollVO.class);
+		
+		out.println(vo + "<br>");
+		
+		// 만든 클래스를 이용하여 읽어보자.
+		PollVO vo2 = JsonUtil.readJSON(application.getResourceAsStream("poll.json"));
+		out.println(vo2 + "<br>");
+		
+	%>
+</body>
+</html>

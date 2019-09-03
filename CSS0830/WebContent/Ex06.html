@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>:focus 연습</title>
+<style type="text/css">
+/* 태그명:focus 포커스를 가지면*/
+input {
+	border: none; border-bottom: 1px solid gray;
+}
+input:focus {
+	background-color: yellow;
+}
+/* 태그명[타입]:focus 해당 타입의 포커스를 가지면 */
+input[type='password']:focus {
+	background-color: pink;
+}
+</style>
+</head>
+<body>
+	이름: <input type="text"><br>
+	암호: <input type="password"><br>
+	전화: <input type="text"><br>
+	주소: <input type="text"><br>
+	이멜: <input type="text"><br>
+</body>
+</html>

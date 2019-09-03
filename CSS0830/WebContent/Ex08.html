@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>하위 선택자(Descendant Selector)</title>
+<style type="text/css">
+/* 공백으로 구분하기 위한 하위 선택자이다. */
+.as p {
+	color:red;
+}
+/* >으로 구분하면 자식 선택자이다. */
+.as > p {
+	color:green;
+}
+</style>
+</head>
+<body>
+<div class="as">
+	하하하하하하
+	<p>호호호호호호</p>
+	<div>ㅋㅋㅋㅋㅋ<p>ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ</p>ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ</div>
+	하하하하하하
+</div>
+<p>호호호호호호호호</p>
+<p>호호호호호호호호</p>
+</body>
+</html>

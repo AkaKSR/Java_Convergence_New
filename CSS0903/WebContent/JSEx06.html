@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>변수의 선언</title>
+<script type="text/javascript">
+	a = 100; // 전역변수
+	var b = 200; // 전역변수
+
+	function fn() {
+		var c = 300; // 지역변수
+		d = 400; // 전역변수 : 함수 호출 후에는 어디서든 사용 가능하다.
+
+		document.write("a = " + a + "<br>"); // 3
+		document.write("b = " + b + "<br>"); // 4
+		document.write("c = " + c + "<br>"); // 5
+		document.write("d = " + d + "<br>"); // 6
+	}
+
+	document.write("a = " + a + "<br>"); // 1
+	document.write("b = " + b + "<br>"); // 2
+	// document.write("c = " + c + "<br>"); // 에러: 선언되지 않은 변수 사용
+	// document.write("d = " + d + "<br>"); // 에러: 선언되지 않은 변수 사용
+	fn();
+	document.write("a = " + a + "<br>"); // 7
+	document.write("b = " + b + "<br>"); // 8
+	// document.write("c = " + c + "<br>"); // 에러: 선언되지 않은 변수 사용
+	document.write("d = " + d + "<br>"); // 9
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

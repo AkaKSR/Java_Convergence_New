@@ -1,7 +1,0 @@
-package kr.green.vo;
-
-public class DailyBoxOfficeList {
-	private int rank;
-	private String movieNm;
-	private String openDt;
-}

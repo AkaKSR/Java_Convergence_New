@@ -1,8 +1,0 @@
-package kr.green.io;
-
-public class STEx {
-	public static void main(String[] args) {
-		String data = "";
-		
-	}
-}
