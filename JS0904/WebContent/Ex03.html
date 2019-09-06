@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>다차원 가변 배열</title>
+<script type="text/javascript">
+	var ar = [1,2,[1,2,3],[1,2,3,4],[1,2,3,4,5]];
+	
+	for(i=0;i<ar.length;i++){
+		// 배열인지 판단하여 출력
+		if(ar[i].length == null) {
+				document.write("ar1[" + i + "]=" + ar[i] + "<br>");
+		} else {
+			for(j=0;j<ar[i].length;j++){
+				document.write("ar1[" + i + "][" + j +"]=" + ar[i][j] + "<br>");
+			}
+		}
+		document.write("<hr>");
+	}
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

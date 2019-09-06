@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>함수를 리턴하는 함수 만들기</title>
+<script type="text/javascript">
+	// 함수를 리턴하는 함수
+	function outer(name) {
+		return function() {
+			alert(name + '씨 안녕~~~');
+		};
+	}
+	
+	// 호출
+	var fn = outer('한사람'); // 함수를 리턴받아 변수에 저장
+	fn();
+	
+	// 두번째 괄호는 outer안에 있는 fucntion을 호출
+	outer('두사람')(); // 리턴된 함수를 바로 실행
+</script>
+</head>
+<body>
+
+</body>
+</html>

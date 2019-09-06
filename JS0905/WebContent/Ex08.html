@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var obj1 = {};
+	var obj2 = {
+		"name" : "한사람",
+		"age" : 23,
+		"gender" : true
+	};
+
+	document.write(typeof obj1 + "<br>");
+	document.write("이름 : " + obj2["name"] + "<br>");
+	document.write("나이 : " + obj2["age"] + "<br>");
+	document.write("성별 : " + (obj2["gender"] ? "남자" : "여자") + "<br><hr>");
+
+	document.write("이름 : " + obj2.name + "<br>");
+	document.write("나이 : " + obj2.age + "<br>");
+	document.write("성별 : " + (obj2.gender ? "남자" : "여자") + "<br><hr>");
+
+	// 메서드 추가
+	obj2.toString = function() {
+		var str = "이름 : " + obj2.name + "<br>";
+		str += "나이 : " + obj2.age + "<br>";
+		str += "성별 : " + (obj2.gender ? "남자" : "여자") + "<br><hr>";
+		return str;
+	}
+
+	document.writeln(obj2.toString());
+
+	// for문을 이용한 객체 내용 출력
+	document.write("<ul>");
+
+	for(var key in obj2){ // 메서드가 아닌것만 출력
+		if(typeof(obj2[key])!='function'){
+			document.write("<li>");
+			document.write(key  + " :  " + obj2[key]);
+			document.write("</li>");
+		}
+	}
+	document.write("</ul>");
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>함수를 리턴하는 함수 만들기</title>
+</head>
+<body>
+	<div id="divWith0">Click me! DIV 0</div>
+	<div id="divWith1">Click me! DIV 1</div>
+	<div id="divWith2">Click me! DIV 2</div>
+	<script>
+		var i, len = 3;
+		for (i = 0; i < len; i++) {
+			/*
+			// 1. 이 코드는 클릭시 모두 3이 나와 원하는 결과가 아니다.
+			//    요소를 찾아 click이벤트를 지정
+			document.getElementById("div" + i).addEventListener("click",
+					function() {
+						alert("You clicked div #" + i);
+					}, false);
+			 */
+			// 2. 이때는 num이라는 변수가 with영역에 별도로 생성
+			//    해결 되었지만 하지만 with명령은 사용을 권장하지 않는다.
+			//    자바스크립트의 성능을 엄청 저하시킨다.
+			/*
+			with ({
+				num : i
+			}) {
+				document.getElementById("divWith" + num).addEventListener(
+						"click", function() {
+							alert("You clicked div #" + num);
+						}, false);
+			}
+			 */
+			// 3. 별도로 작성한 함수 호출
+			//    별도의 작업을 추가해야 한다.
+			// divClick(i);
+			// 4. 함수를 리턴하도록 한다.
+			document.getElementById("divWith" + i).addEventListener("click",
+					(function(index) {
+						// 출력을 함수로 만들어서 리턴
+						// 함수를 리턴하면 그 값이 유지된다.
+						return function() {
+							alert("You clicked div #" + index);
+						};
+					}(i)), false);
+
+		}
+		/*
+		// 별도의 함수로 이벤트 지정
+		function divClick(i) {
+				document.getElementById("divWith" + i).addEventListener(
+						"click", function() {
+							alert("You clicked div #" + i);
+						}, false);
+		}
+		 */
+	</script>
+</body>
+</html>

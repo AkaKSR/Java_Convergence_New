@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>함수를 리턴하는 함수 만들기</title>
+<script type="text/javascript">
+	for (var i = 1; i <= 20; i++) {
+		var total = (total || 0) + i;
+		var last = i;
+		if (total > 16) {
+			break;
+		}
+	}
+	
+	// JAVA/C 언어 에서는 에러이다.
+	// 하지만 JavaScript에서는 for문에서 변수를 선언해도 전역변수이다.
+	// JavaScript에서 변수의 값을 지역적으로 제한하고 싶은때는
+	// function, with, catch 일때만 가능하다.
+	document.write("i = " + i + "<br>");
+	document.write("last = " + last + "<br>");
+	document.write("total = " + total + "<br>");
+</script>
+</head>
+<body>
+</body>
+</html>

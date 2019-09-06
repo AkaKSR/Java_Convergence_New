@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>함수</title>
+<script type="text/javascript">
+	// 함수 작성
+	function fn() {
+		alert('나 함수1');
+	}
+	
+	var fn2 = function() {
+		alert('나 함수2');
+	}
+	
+	// 함수 내용 보기
+	document.write(fn + "<br>");
+	document.write(fn2 + "<br>");
+	
+	// 함수의 타입 검사
+	document.write(typeof fn + "<br>");
+	document.write(typeof fn2 + "<br>");
+	
+	fn();
+	fn2();
+	var c = fn2;
+	c();
+	var d = fn;
+	d();
+</script>
+</head>
+<body>
+
+</body>
+</html>

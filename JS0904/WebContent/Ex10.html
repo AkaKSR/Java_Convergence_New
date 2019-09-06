@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>함수</title>
+<script type="text/javascript">
+	fn(); // 에러 아님
+	fn2(); // 선언이 되기 전에 호출 되었으므로 에러
+	
+	// 함수 작성
+	// 명시적 함수 : 선언 전후 어디에서든 사용 가능
+	function fn() {
+		alert('나 함수1');
+	}
+	
+	// 익명 함수를 변수에 대입하면 변수 선언 이후에만 사용 가능
+	var fn2 = function() {
+		alert('나 함수2');
+	}
+	
+	// 선언 후 호출이므로 둘다 가능
+	fn();
+	fn2();
+</script>
+</head>
+<body>
+
+</body>
+</html>

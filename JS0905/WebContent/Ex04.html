@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	// setTimeout(함수, 시간) : 지정 시간후 함수가 실행
+	// setInterval(함수, 시간) : 지정 시간 마다 함수가 실행
+	// clearTimeout(타이머) : setTimeout함수를 취소
+	// clearInterval(타이머) : setInterval함수를 취소
+	
+	setInterval(function() {
+		var today = new Date();
+		document.title = today.getHours() + "시 "; 
+		document.title += today.getMinutes() + "분 "; 
+		document.title += today.getSeconds() + "초"; 
+	}, 1000);
+</script>
+</head>
+<body>
+
+</body>
+</html>

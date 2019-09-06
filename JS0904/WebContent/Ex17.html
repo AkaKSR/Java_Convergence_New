@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>with 명령</title>
+<script type="text/javascript">
+	var obj = {
+		"name" : "한사람",
+		"age" : 33
+	};
+
+	document.write("이름 : " + obj.name + "<br>");
+	document.write("나이 : " + obj.age + "세<br>");
+
+	with (obj) {
+		document.write("이름 : " + obj.name + "<br>"); // obj 생략가능
+		document.write("나이 : " + obj.age + "세<br>");
+	}
+</script>
+</head>
+<body>
+</body>
+</html>

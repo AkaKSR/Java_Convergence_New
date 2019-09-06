@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>undefined 변수 확인</title>
+<script type="text/javascript">
+	var i = 1;
+	// document.write(i + "<br>");
+	document.write(typeof(i) + "<br>"); // undefined
+	
+	// 변수의 선언 여부는 어떻게 판단할까?
+	if(typeof(i) === 'undefined')
+	document.write("변수 i는 초기화되지 않았습니다.<br>")
+	else
+	document.write("변수 i=" + i + "<br>")
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

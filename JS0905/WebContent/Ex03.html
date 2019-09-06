@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	// setTimeout(함수, 시간) : 지정 시간후 함수가 실행
+	// setInterval(함수, 시간) : 지정 시간 마다 함수가 실행
+	// clearTimeout(타이머) : setTimeout함수를 취소
+	// clearInterval(타이머) : setInterval함수를 취소
+	
+	var timer = setTimeout(function() {
+		alert('언제 실행 될까?');
+	}, 2000);
+	
+	function show() {
+		document.write("나는 몇 초마다 보일까요?<br>");
+		count++;
+		if (count==5) clearInterval(timer2);
+	}
+	
+	var count = 0;
+	var timer2 = setInterval(show, 1000);
+	
+	document.title = "나는 제목 입니다.";
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var ar1 = [1,2,3,4,5,6,7];
+	var ar2 = Array(10); // 숫자가 1개면 배열크기
+	var ar3 = Array(11,22,33,44); // 2개 이상이면 초기화
+	document.write("ar1(" + ar1.length + "개) : " + ar1 + "<br>");
+	document.write("ar2(" + ar2.length + "개) : " + ar2 + "<br>");
+	document.write("ar3(" + ar3.length + "개) : " + ar3 + "<br>");
+	
+	document.write("<hr>");
+	
+	for (i = 0; i < ar3.length; i++) {
+		document.write("ar3[" + i + "]=" + ar3[i] + "<br>");
+	}
+	document.write("<hr>");
+	
+	for (i in ar3) { // 자바와 다르게 i에 값이 아닌 index값이 넘어온다.
+		document.write("ar3[" + i + "]=" + ar3[i] + "<br>");
+	}
+	document.write("<hr>");
+</script>
+</head>
+<body>
+
+</body>
+</html>

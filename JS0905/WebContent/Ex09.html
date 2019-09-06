@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>객체 지향 프로그래밍</title>
+<script type="text/javascript">
+	// new를 붙여 객체 생성했을 때와 new 없이 생성했을 경우의 차이
+	function Some(value) {
+		this.value = value;
+	}
+	// new를 사용하면 별도의 메모리가 확보되어 각각 데이터를 가진다.
+	var some1 = new Some('한사람');
+	var some2 = new Some('두사람');
+	var some3 = new Some('세사람');
+	
+	document.write(some1.value + "<br>");
+	document.write(some2.value + "<br>");
+	document.write(some3.value + "<br><br>");
+
+	// new를 사용하지 않으면 this가 window 되어 최상위 영역에 value가 생성된다.
+	// 그래서 여러개를 만들어도 1개만 생기고 마지막에 저장한 데이터만 존재한다.
+	var some4 = Some('네사람');
+	var some5 = Some('오사람');
+	var some6 = Some('육사람');
+	
+	// document.write(some4.value + "<br>");
+	// document.write(some5.value + "<br>");
+	// document.write(some6.value + "<br><br>");
+	
+	document.write(value + "<br>");
+	document.write(window.value + "<br>");
+</script>
+</head>
+<body>
+
+</body>
+</html>
