@@ -3,6 +3,13 @@
 <b>Tools</b><br>
 Spring Tool Suite(Eclipse)
 
+<b>Use Language</b><br>
+1. Java
+2. Java Script
+3. JSP
+4. XML
+5. JSON
+
 <b>Plugins</b><br>
 1. Tern Eclipse
 2. Properties Editor
