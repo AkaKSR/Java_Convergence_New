@@ -38,9 +38,8 @@ Spring Tool Suite(Eclipse)
 3. Java Beginner
 4. JSP Beginner
 5. JavaScript Beginner
-6. EL Beginner
+6. JSTL&EL Beginner
 7. HTML Beginner
-8. JSTL Beginner
 
 <b>Program produced</b>
 1. sdvEditor CLI&GUI(Stardew Valley Save Editor)
