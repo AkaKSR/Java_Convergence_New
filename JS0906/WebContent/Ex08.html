@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JSON 다루기</title>
+<script type="text/javascript">
+	var str = '{"name":"한사람","age":12, "gender":true}';
+	document.write(typeof str + " : " + str + "<br>");
+	
+	obj = JSON.parse(str); // 문자열을 json객체로 만든다.
+	document.write(typeof obj + " : " + obj.name + ", " + obj.age + "<br>");
+	
+	str2 = JSON.stringify(obj); // 자바스크립트 객체를 문자열로 만든다.
+	document.write(typeof str2 + " : " + str2 + "<br>");
+</script>
+</head>
+<body>
+</body>
+</html>

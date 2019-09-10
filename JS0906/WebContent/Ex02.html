@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>내장 객체</title>
+<script type="text/javascript">
+	// 내장 객체 : JavaScript에 이미 만들어져 있는 객체
+	function Person(name, age) {
+		this.name = name;
+		this.age = age;
+		this.toString = function() {
+			return name + "(" + age + ")";
+		}
+	}
+	
+	var ar = [];
+	ar.push(new Person("한사람", 22));
+	ar.push(new Person("두사람", 18));
+	ar.push(new Person("세사람", 32));
+	ar.push(new Person("네사람", 54));
+	ar.push(new Person("오사람", 15));
+	ar.push(new Person("오사람", 10));
+	ar.push(new Person("오사람", 22));
+	ar.push(new Person("오사람", 17));
+	ar.push(new Person("오사람", 42));
+	
+	document.write(ar + "<br>");
+	ar.sort();
+	document.write(ar + "<br>");
+	// 나이 오름차순
+	ar.sort(function(a, b) {
+		return a.age-b.age;
+	})
+	document.write(ar + "<br>");
+	// 나이 내림차순
+	ar.sort(function(a, b) {
+		return b.age-a.age;
+	})
+	document.write(ar + "<br>");
+	// 이름 오름차순 나이 내림차순
+	
+	ar.sort(function(a, b) {
+		return (a.age-b.age)-(b.name-a.name);
+	})
+	
+	/*
+	ar.sort(function(a, b) {
+		if (a.name == b.name) {
+			return b.age - a.age;
+		} else if (a.name > b.name) {
+			return 1;
+		}
+	})
+	*/
+	document.write(ar + "<br>");
+</script>
+</head>
+<body>
+
+</body>
+</html>

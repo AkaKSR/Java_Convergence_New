@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>살아온 일수 구하기</title>
+<script type="text/javascript">
+	function result() {
+		var message = "당신이 살아온 일수는 ";
+		
+		var today = new Date();
+		var yy = document.getElementById("yy").value;
+		var mm = document.getElementById("mm").value;
+		var dd = document.getElementById("dd").value;
+		
+		var birth = new Date(yy,mm,dd);
+		var interval = today.getTime() - birth.getTime();
+		interval = Math.floor(interval / (1000*60*60*24));
+		message += interval + "일 입니다."
+		
+		alert(message);
+	}
+</script>
+</head>
+<body>
+	<input type="text" id="yy" size="5">년
+	<input type="text" id="mm" size="2">월
+	<input type="text" id="dd" size="2">일
+	<input type="button" value="살아온 일수 구하기" onclick="result();">
+</body>
+</html>

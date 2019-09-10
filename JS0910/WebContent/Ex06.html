@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function formCheck(){
+		// true를 전송하면 submit이 이루어지고 false를 전송하면 submit이 중지 된다.
+		var obj = document.getElementById("name");
+		if(!obj.value || obj.value.trim().length==0){
+			alert('이름은 반드시 입력해야 합니다');
+			obj.value = '';
+			obj.focus();
+			return false;
+		}
+		obj.value = obj.value.trim();
+		//--------------------------------------------
+		var obj = document.getElementById("password1");
+		if(!obj.value || obj.value.trim().length==0){
+			alert('비밀번호는 반드시 입력해야 합니다');
+			obj.value = '';
+			obj.focus();
+			return false;
+		}
+		//--------------------------------------------
+		var obj = document.getElementById("password2");
+		if(!obj.value || obj.value.trim().length==0){
+			alert('비밀번호 확인은 반드시 입력해야 합니다');
+			obj.value = '';
+			obj.focus();
+			return false;
+		}
+		//--------------------------------------------
+		// 비밀번호와 비빌번호 확인이 다른지를 검사해줘야 한다.
+		var pass1 = document.getElementById("password1").value;
+		var pass2 = document.getElementById("password2").value;
+		if(pass1!=pass2){
+			alert('비밀번호가 일치하지 않습니다.');
+			document.getElementById("password2").value = '';
+			document.getElementById("password2").focus();
+			return false;
+		}
+		//--------------------------------------------
+		var obj = document.getElementById("age");
+		if(!obj.value || obj.value.trim().length==0){
+			alert('나이는 반드시 입력해야 합니다');
+			obj.value = '';
+			obj.focus();
+			return false;
+		}
+		//--------------------------------------------
+		// 나이는 숫자로만 이루어 졌는지 확인
+		if(isNaN(obj.value)){
+			alert('나이는 반드시 숫자만으로 입력해야 합니다');
+			obj.value = '';
+			obj.focus();
+			return false;
+		}
+		//--------------------------------------------
+		// 성별을 선택 했는지를 검사해야 한다.
+		var chk1 = document.getElementById("gender1");
+		var chk2 = document.getElementById("gender2");
+		if (chk1.checked == false && chk2.checked == false) {
+			alert("성별은 둘중 하나는 반드시 선택되어야 합니다.");
+			chk1.value = '';
+			chk1.focus();
+			return false;
+		}
+
+		return true;
+		
+	}
+</script>
+</head>
+<body>
+	<form action="#" method="post" onsubmit="return formCheck()">
+		<input type="text" name="name" id="name" placeholder="이름입력"><br>
+		<input type="password" name="password1" id="password1" placeholder="비밀번호"><br>
+		<input type="password" name="password2" id="password2" placeholder="비밀번호 확인"><br>
+		<input type="text" name="age" id="age" placeholder="나이입력"><br>
+		<label><input type="radio" name="gender" id="gender1" value="true">남자 </label>
+		<label><input type="radio" name="gender" id="gender2" value="false">여자 </label>
+		<input type="submit" value="전송하기">
+	</form>
+</body>
+</html>

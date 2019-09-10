@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function send() {
+		var value = document.getElementById("msg").value;
+		opener.document.getElementById("msg").innerText = value;
+		self.close();
+	}
+</script>
+</head>
+<body>
+	보낼 메세지 :
+	<input type="text" id="msg">
+	<button onclick="send();">부모창에 보내기</button>
+</body>
+</html>

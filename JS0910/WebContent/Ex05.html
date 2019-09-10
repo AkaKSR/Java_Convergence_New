@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload = function() {
+		var btn1 = document.getElementById("btn1");
+		var btn2 = document.getElementById("btn2");
+		btn2.onclick = function() {
+			var span = document.getElementById("counter_b").innerText;
+			document.getElementById("counter_b").innerHTML = Number(span)+1;
+		}
+		btn1.onclick = function() {
+			var span = document.getElementById("counter_a").innerText;
+			document.getElementById("counter_a").innerHTML = Number(span)+1;
+			// 이벤트 호출
+			btn2.click();
+		}
+	}
+</script>
+</head>
+<body>
+	<button id="btn1">번호증가(2개만)</button> <h1>번호1 : <span id="counter_a">0</span></h1>
+	<button id="btn2">번호증가(1개만)</button> <h1>번호2 : <span id="counter_b">0</span></h1>
+</body>
+</html>

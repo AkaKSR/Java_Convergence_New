@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>태그 생성하기</title>
+<script type="text/javascript">
+	window.onload = function() {
+		var img1 = document.createElement("img");
+		img1.src = 'img/images1.jpg';
+		img1.width = 200;
+		img1.height = 200;
+		document.body.appendChild(img1);
+
+		var img2 = document.createElement("img");
+		img2.setAttribute("src", "img/images2.jpg");
+		img2.setAttribute("width", "200");
+		img2.setAttribute("height", "200");
+		img2.setAttribute("my-property", "내가만든속성");
+		document.body.appendChild(img2);
+		
+		document.body.innerHTML += "<img src='img/images3.jpg' width='200' height='200'>";
+		document.body.innerHTML += "<br><br>";
+
+		for (var i = 1; i <= 3; i++) {
+			img = document.createElement("img");
+			img.src = 'img/images'+i+'.jpg';
+			img.width = 100*i;
+			img.height = 100*i;
+			document.body.appendChild(img);
+		}
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>

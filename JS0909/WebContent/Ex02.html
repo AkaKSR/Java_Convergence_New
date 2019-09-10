@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload = function() {
+		// 아래의 입력 상자에 시계가 나타나게 하시오!!
+		// setTimeout과 setInterval함수를 이용해서 두가지 버전으로 나타내시오!
+
+		// setTimeout(함수, 시간) : 지정 시간후 함수가 실행
+		// setInterval(함수, 시간) : 지정 시간 마다 함수가 실행
+		// clearTimeout(타이머) : setTimeout함수를 취소
+		// clearInterval(타이머) : setInterval함수를 취소
+
+		timeout();
+		setInterval(function() {
+			document.getElementById("date2").value = getTime();
+		}, 1000);
+	}
+
+	function getTime() {
+		var time = new Date();
+		var hh = time.getHours();
+		var mm = time.getMinutes();
+		var ss = time.getSeconds();
+		return (hh < 0 ? "0" + hh : hh) + ":" + (mm < 0 ? "0" + mm : mm) + ":"
+				+ (ss < 0 ? "0" + ss : ss);
+	}
+
+	function timeout() {
+		document.getElementById("date1").value = getTime();
+		setTimeout("timeout()", 1000);
+	}
+</script>
+</head>
+<body>
+	<input type="text" id="date1">
+	<input type="text" id="date2">
+</body>
+</html>

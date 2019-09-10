@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>디지털 시계 만들기</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/locale/ko.js"></script>
+<script type="text/javascript">
+	window.onload = function(){
+		/*
+		document.write(moment().format('MMMM Do YYYY, h:mm:ss a') + "<br>")
+		document.write(moment().format('dddd') + "<br>")
+		document.write(moment().format("MMM Do YY")  + "<br>")
+		*/
+		// 이 줄을 생략하면 1초후에 시간이 나온다.
+		document.getElementById("clock").innerHTML = getTime();
+		setInterval(function() {
+			document.getElementById("clock").innerHTML = getTime();
+		}, 1000);
+	};
+	
+	function getTime(){
+		var time = moment().format('hh:mm:ss');
+		var str = "";
+		for(i=0;i<time.length;i++){
+			t = time.charAt(i);// 1글자 잘라내기
+			if(t==":"){
+				str += "<img src='images/sm_010.jpg'>";
+			}else{
+				str += "<img src='images/sm_00"+t+".jpg'>";
+			}
+		}
+		return str;
+	}
+</script>
+</head>
+<body>
+	<div id="clock"></div>
+</body>
+</html>

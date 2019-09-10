@@ -1,0 +1,20 @@
+[
+	{
+		"userid": "admin",
+		"password": "1234",
+		"point": "100",
+		"nickName": "최고관리자"
+	},
+	{
+		"userid": "root",
+		"password": "123456",
+		"point": "800",
+		"nickName": "선플러"
+	},
+	{
+		"userid": "user",
+		"password": "0000",
+		"point": "400",
+		"nickName": "악플러"
+	}
+]

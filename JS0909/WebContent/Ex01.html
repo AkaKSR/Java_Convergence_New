@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>window 객체</title>
+<script type="text/javascript">
+	// box객체가 생기기 전에 찾아서 에러
+	// document.getElementById("box").innerHTML = '될까요? ㅋㅋㅋ';
+		
+	// 윈도우가 모두 읽혀진 다음에 실행해라!!!
+	document.onload = function () {
+		document.getElementById("box").innerHTML = '될까요? ㅎㅎㅎ';
+	}
+</script>
+</head>
+<body>
+	<div id="box" style="width: 100px;height: 100px;border: 1px solid gray;"></div>
+</body>
+</html>

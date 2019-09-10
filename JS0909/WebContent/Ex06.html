@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload = function() {
+		
+	}
+	function centerWindow() {
+		sw = screen['width'];
+		sh = screen['height'];
+		win = window.open('','','width=200px, height=200px');
+		left = (sw-200)/2;
+		top1 = (sh-300)/2;
+		win.moveTo(left, top1);
+		win.document.write("나 정말 중앙이야?");
+		document.getElementById("box").innerHTML = sw + ", " + sh + ", " + left + ", " + top1; 
+	}
+</script>
+</head>
+<body>
+	<button onclick='centerWindow()'>화면 중앙에 윈도우 띄우기</button>
+	<div id="box"></div>
+</body>
+</html>

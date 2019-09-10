@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload = function() {
+		var imgs = document.getElementsByTagName("img");
+		alert("이미지 개수 : " + imgs.length + "개");
+		for (i in imgs) {
+			imgs[i].src = 'img/images' + (i*1+1) + ".jpg";
+			imgs[i].width = '200';
+			imgs[i].height = '200';
+			imgs[i].style.border = '10px solid gray';
+		}
+	}
+</script>
+</head>
+<body>
+	<img>
+	<img>
+	<img>
+</body>
+</html>

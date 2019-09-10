@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Math 객체</title>
+<script type="text/javascript">
+	function getLotto() {
+		var count = document.getElementById("game").value;
+		var message = "";
+		for (var i = 0; i < count; i++) {
+			message += (i + 1) + "게임 : ";
+			// 로또 번호 만들기
+			var value = Array(6);
+
+			for (var j = 0; j < value.length; j++) {
+				value[j] = Math.floor(Math.random() * 45) + 1;
+
+				// 중복 수 제거
+				for (var k = 0; k < j; k++) {
+					if (value[j] == value[k]) {
+						j--;
+						break;
+					}
+				}
+			}
+			// 결과 값 정렬
+			value.sort(function(a, b) {
+				return a - b;
+			});
+			message += value + "<br>";
+		}
+		document.getElementById("result").innerHTML = message;
+
+	}
+</script>
+</head>
+<body>
+	<h1>로또 번호 만들기</h1>
+	<input type="text" size="4" id="game">
+	<button onclick="getLotto()">만들기</button>
+	<br>
+	<div
+		style="width: 400px; height: 500px; border: 1px solid gray; overflow: scroll;"
+		id="result"></div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	// Hello JavaScript를 1초마다 1개식 20번 출력하기!!!
+	window.onload = function() {
+
+		timer = setInterval(function() {
+			document.write("<h1>Hello JavaScript!!!</h1>");
+		}, 1000);
+
+		setTimeout(function() {
+			clearInterval(timer);
+		}, 20000);
+	};
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload = function() {
+		var obj1 = document.getElementById("header2");
+		obj1.onclick = function() {
+			alert('두번째 제목 눌렀냐?');
+		}
+		
+		document.getElementById("header3").onclick = fn3;
+		document.getElementById("header4").addEventListener("click", function(e) {
+			alert('자꾸 누르면 죽인다!!!')
+		});
+	}
+	
+	function fn3() {
+		alert('세번째 제목 눌렀냐?');
+	}
+</script>
+<style type="text/css">
+	h1 {
+	cursor: pointer;
+	}
+</style>
+</head>
+<body>
+	<h1 id="header1" onclick="alert('왜눌러!!!')">눌러줘~~~ 01</h1>
+	<h1 id="header2">눌러줘~~~ 02</h1>
+	<h1 id="header3">눌러줘~~~ 03</h1>
+	<h1 id="header4">눌러줘~~~ 04</h1>
+</body>
+</html>

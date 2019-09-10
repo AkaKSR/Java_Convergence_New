@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>audio 다루기</title>
+<script type="text/javascript">
+	var a = new Audio('b.mp3');
+</script>
+</head>
+<body>
+	<button onclick="a.play()">시작</button>
+	<button onclick="a.pause()">중지</button>
+	<br>
+	위치 변경 : <input type="text" onchange="a.currentTime=this.value"><br>
+	음량 변경 : <input type="text" onchange="a.volume=this.value">
+</body>
+</html>

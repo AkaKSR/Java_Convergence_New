@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>윈도우 객체</title>
+<script type="text/javascript">
+	function win2() {
+		window.open('https://www.naver.com/');
+	}
+	function win3() {
+		var win = window.open('https://www.naver.com/','Naver');
+	}
+	function win4() {
+		var win = window.open('https://www.naver.com/', 'Naver', 'width=300, height=300');
+	}
+	function win5() {
+		var win = window.open('', '', 'width=400, height=400, location=no');
+		win.document.write("<h1>Hello JavaScript</h1>");
+	}
+	function win6(){
+		var win = window.open('child.html');
+		setTimeout(function() {
+		win.document.getElementById("msg").value = '축하인사 해줘!!!';
+		}, 50)
+	}
+</script>
+</head>
+<body>
+	<button onclick="window.open();">새창 띄우기 1</button>
+	<button onclick="win2()">새창 띄우기 2(클릭할때마다 생김)</button>
+	<button onclick="win3()">새창 띄우기 3(한번만 생김)</button>
+	<button onclick="win4()">새창 띄우기 4(크기 지정)</button>
+	<button onclick="win5()">새창 띄우기 5(내용 채우기)</button>
+	<button onclick="win6()">새창 띄우기(내용받기) 6</button>
+	<br>
+	<div id="msg"></div>
+</body>
+</html>

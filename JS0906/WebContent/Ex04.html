@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>내가만든 타이머</title>
+<style type="text/css">
+body {
+	margin: 0px;
+}
+
+#center {
+	font-size: 45pt;
+	text-align: center;
+	line-height: 140px; position : absolute;
+	top: 50%;
+	left: 50%;
+	width: 300px;
+	height: 200px;
+	overflow: hidden;
+	background-color: #FC0;
+	margin-top: -100px;
+	margin-left: -150px;
+	position: absolute;
+}
+
+input[type=button] {
+	width: 70px;
+	height: 30px;
+}
+
+#innerBox {
+	margin-top: -80px;
+}
+</style>
+<script type="text/javascript">
+	var hour = 0, minute = 0, second = 0;
+	var timer;
+
+	// 시간을 줄여주는 함수 : 시간이 0이될때 까지  1초마다 실행!!!!
+	function setTime() {
+		if(hour==0 && minute==0 && second==0){ // 시간이 0이되면
+			viewTime();
+			clearInterval(timer);
+			// 시작버튼을 활성화하고 나머지 버튼은 비활성화 한다.
+			document.getElementById('startBtn').disabled = '';
+			document.getElementById('startBtn').setAttribute('value', '시작')
+			document.getElementById('pauseBtn').disabled = 'disabled';
+			document.getElementById('stopBtn').disabled = 'disabled';
+			return;
+		}
+		if(second == 0 && (minute>0 || hour>0)){
+			second = 60; // 60초로 변경하고
+			if(minute==0 && hour > 0){
+				minute = 60;
+				hour--;
+			}
+			minute--; // 분을 줄인다.
+		}
+		second--;
+		viewTime(); // 변경된 시간 표시
+	}
+	// 시간을 표시하는 함수
+	function viewTime() {
+		var timeStr = "0" + hour + ":"
+				+ ((minute < 10) ? "0" + minute : minute) + ":"
+				+ ((second < 10) ? "0" + second : second)
+		document.getElementById("timeBox").innerHTML = timeStr;
+	}
+	var restart = false; // 재시작인지 검사!!!
+	window.onload = function() {
+		// 시작시 시작버튼만 누르기 가능하게 만든다.
+		document.getElementById('pauseBtn').disabled = 'disabled';
+		document.getElementById('stopBtn').disabled = 'disabled';
+
+		document.getElementById('startBtn').onclick = function() {
+			// alert('시작 버튼 클릭');
+			// 시간을 세팅하고
+			if (restart != true) {
+				hour = 0;
+				minute = 01;
+				second = 10;
+			}
+			restart = false;
+			viewTime();
+			// 타이머를 시작한다.
+			timer = setInterval(setTime, 1000);
+			// 시작버튼을 비활성화하고 나머지 버튼은 활성화 한다.
+			document.getElementById('startBtn').disabled = 'disabled';
+			document.getElementById('pauseBtn').disabled = '';
+			document.getElementById('stopBtn').disabled = '';
+		};
+
+		document.getElementById('pauseBtn').onclick = function() {
+			// alert('일시정지 버튼 클릭');
+			// 타이머를 중지 시킨다.
+			clearInterval(timer);
+			restart = true;
+			// 시작버튼을 활성화하고 제목은 재시작으로 변경
+			document.getElementById('startBtn').disabled = '';
+			document.getElementById('startBtn').setAttribute('value', '재시작');
+		};
+
+		document.getElementById('stopBtn').onclick = function() {
+			// alert('정지 버튼 클릭');
+			// 시간을 초기화 하고
+			hour = 1;
+			minute = 10;
+			second = 10;
+			viewTime();
+			// 타이머를 중지 시킨다.
+			clearInterval(timer);
+			// 시작버튼을 활성화하고 나머지 버튼은 비활성화 한다.
+			document.getElementById('startBtn').disabled = '';
+			document.getElementById('startBtn').setAttribute('value', '시작')
+			document.getElementById('pauseBtn').disabled = 'disabled';
+			document.getElementById('stopBtn').disabled = 'disabled';
+		};
+	}
+</script>
+</head>
+<body>
+	<div id="center">
+		<div id="timeBox">00:00:00</div>
+		<div id="innerBox">
+			<input type="button" id="startBtn" value="시    작">
+			<input type="button" id="pauseBtn" value="일시정지">
+			<input type="button" id="stopBtn"  value="정    지">
+		</div>
+	</div>
+</body>
+</html>

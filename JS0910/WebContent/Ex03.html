@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	h1{cursor: pointer;}
+</style>
+<script type="text/javascript">
+	window.onload = function () {
+		var obj1 = document.getElementById("header1");
+		var obj2 = document.getElementById("header2");
+		obj1.onclick = function () {
+			alert('첫번째!!!');
+		}
+		obj2.onclick = function () {
+			alert('두번째!!!');
+			this.style.color = 'red';
+			this.style.backgroundColor = 'silver';
+			obj2.onclick = null; // 이벤트 해제
+		}
+	}
+</script>
+</head>
+<body>
+	<h1 id="header1">나는 계속 클릭됩니다.</h1>
+	<h1 id="header2">나는 1번만 됩니다</h1>
+</body>
+</html>

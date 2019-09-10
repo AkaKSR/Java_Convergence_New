@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>내장 객체</title>
+<script type="text/javascript">
+	// 내장 객체 : JavaScript에 이미 만들어져 있는 객체
+	var ar = [12,32,312,21,531,22];
+	document.write(ar + "<br>");
+	ar.sort(); // 정렬
+	document.write(ar + "<br>"); // 문자열로 정렬
+	ar.sort(function (a,b) {
+		return a-b;
+	});
+	document.write(ar + "<br>"); // 숫자 오름차순으로 정렬
+	ar.sort(function (a,b) {
+		// 같으면 0, 앞의 변수가 크면 양수, 뒤의 변수가 크면 음수를 리턴하도록 작성
+		return b-a;
+	});
+	document.write(ar + "<br>"); // 숫자 내림차순으로 정렬
+</script>
+</head>
+<body>
+
+</body>
+</html>

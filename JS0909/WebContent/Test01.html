@@ -1,0 +1,42 @@
+<!--
+1개는 반드시 있어야 한다.
+10개 이상 추가 할 수 없다.
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var count=2;
+	function appendFile(){
+		count++;
+		if(count>10){
+			alert('파일은 10개까지만 가능합니다.');
+			count--;
+			return;
+		}
+		document.getElementById("fileBox").innerHTML += 
+			'<div id="file'+count+'">파일 ' + (count<10?"0":"") +count+' : <input type="file" name="file"></div>';
+	}
+	function deleteFile(){
+		if(count==1){
+			alert('1개 이상은 반드시 있어야 합니다.');
+			return;
+		}
+		document.getElementById("fileBox").removeChild(document.getElementById("file"+count));
+		count--;
+	}
+</script>
+</head>
+<body>
+	<div id="fileBox">
+		파일 첨부
+		<button onclick="appendFile()"> + </button>
+		<button onclick="deleteFile()"> - </button>
+		<br><hr>
+		<div id="file1">파일 01 : <input type="file" name="file"></div>
+		<div id="file2">파일 02 : <input type="file" name="file"></div>
+	</div>
+</body>
+</html>

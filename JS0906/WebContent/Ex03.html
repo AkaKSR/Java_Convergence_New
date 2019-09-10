@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>내장 객체</title>
+<script type="text/javascript">
+	// 내장 객체 : JavaScript에 이미 만들어져 있는 객체
+	var ar = [];
+	document.writeln(ar + "<br>");
+	ar.push(ar + "<br>");
+	// 배열 요소 추가
+	ar.push(1);
+	ar.push(2);
+	ar.push(3);
+	ar.push(4);
+	document.writeln(ar + "<br>");
+	// 배열의 마지막 요소 제거
+	ar.pop();
+	ar.pop();
+	document.writeln(ar + "<br>");
+	// 임의의 위치에 있는 배열 요소를 삭제해보고 싶다.
+	Array.prototype.remove = function(index) {
+		this.splice(index, 1);
+	}
+	ar.push(3);
+	ar.push(4);
+	document.writeln(ar + "<br>");
+	ar.remove(2);
+	document.writeln(ar + "<br>");
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>
