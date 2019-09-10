@@ -33,13 +33,14 @@ Spring Tool Suite(Eclipse)
 1. UTF-8
 
 <b>AkaKSR's Spec</b><br>
-Windows BatchScript intermediate<br>
-Network Maintenence intermediate<br>
-Java Beginner<br>
-JSP Beginner<br>
-JavaScript Beginner<br>
-EL Beginner<br>
-HTML Beginner<br>
+1. Windows BatchScript intermediate
+2. Network Maintenence intermediate
+3. Java Beginner
+4. JSP Beginner
+5. JavaScript Beginner
+6. EL Beginner
+7. HTML Beginner
+8. JSTL Beginner
 
 <b>Program produced</b>
 1. sdvEditor CLI&GUI(Stardew Valley Save Editor)
