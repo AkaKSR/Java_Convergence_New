@@ -9,6 +9,7 @@ Spring Tool Suite(Eclipse)
 3. JSP
 4. XML
 5. JSON
+6. HTML
 
 <b>Plugins</b><br>
 1. Tern Eclipse
