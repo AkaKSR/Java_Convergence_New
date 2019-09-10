@@ -31,3 +31,22 @@ Spring Tool Suite(Eclipse)
 
 <b>Encoding</b><br>
 1. UTF-8
+
+<b>AkaKSR's Spec</b><br>
+Windows BatchScript intermediate<br>
+Network Maintenence intermediate<br>
+Java Beginner<br>
+JSP Beginner<br>
+JavaScript Beginner<br>
+EL Beginner<br>
+HTML Beginner<br>
+
+<b>Program produced</b>
+1. sdvEditor CLI&GUI(Stardew Valley Save Editor)
+2. Windows Auto Repair Tool with MBR(used Enterprise)
+
+<b>Production in progress</b>
+1. PMessenger(Personal Messenger)
+2. Beat Impact(Rhythm Game)
+2-1. Beat Impact Note Maker
+2-2. LaunchPad Interlocking
