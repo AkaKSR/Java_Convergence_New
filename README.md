@@ -1,8 +1,8 @@
 # Java_Convergence_New
 # Requirement
 <b>Tools</b><br>
-Spring Tool Suite(Eclipse)
-Apache Tomcat(Server)
+Spring Tool Suite(Eclipse)<br>
+Apache Tomcat(Server)<br>
 Pivotal tc(sts default server)
 
 <b>Use Language</b><br>
