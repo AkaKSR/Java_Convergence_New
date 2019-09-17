@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>unbind 사용하기</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$("#btn1").click(function() {
+			alert($(this).html());
+		});
+		// unbind: 지정된 이벤트를 제거한다.
+		$("#btn2").click(function() {
+			alert($(this).html());
+			$(this).unbind('click');
+		});
+		$("#btn3").one('click', function() {
+			alert($(this).html());
+		})
+	});
+</script>
+</head>
+<body>
+	<button id="btn1">Toggle 1</button>
+	<button id="btn2">Toggle 2</button>
+	<button id="btn3">Toggle 3</button>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$("body > *").css('color', 'gray'); // 자식 선택자
+		$("body *").css('background', 'pink'); // 자손 선택자
+	});
+</script>
+</head>
+<body>
+	<!-- div>ul>li{아이템 $$}*5 -->
+	<div>
+		<ul>
+			<li>아이템 01</li>
+			<li>아이템 02</li>
+			<li>아이템 03</li>
+			<li>아이템 04</li>
+			<li>아이템 05</li>
+		</ul>
+	</div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>다른 프레임워크와의 충돌 방지</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$.noConflict();
+	jQuery(function() {
+		alert('ㅎㅎㅎㅎㅎ\n앞으로는 $대신 jQuery를 사용함.');
+		jQuery("h1:eq(0)").css('color', 'red');
+		var J = jQuery;
+		alert('ㅋㅋㅋㅋㅋ\n앞으로는 jQuery대신 J를 사용함.');
+		J("h1:eq(2)").css('color', 'blue');
+	});
+</script>
+</head>
+<body>
+	<h1>제목 1</h1>
+	<h1>제목 2</h1>
+	<h1>제목 3</h1>
+	<h1>제목 4</h1>
+	<h1>제목 5</h1>
+</body>
+</html>

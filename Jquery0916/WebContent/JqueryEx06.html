@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		setTimeout(function() {
+			// select태그 안의 option중 선택된 것의 값
+			alert($("select > option:selected").val());
+		}, 5000);
+	});
+</script>
+</head>
+<body>
+	<select name="" id="">
+		<option value="항목 01">항목 01</option>
+		<option value="항목 02">항목 02</option>
+		<option value="항목 03">항목 03</option>
+		<option value="항목 04">항목 04</option>
+		<option value="항목 05">항목 05</option>
+	</select>
+</body>
+</html>

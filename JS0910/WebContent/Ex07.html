@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이벤트 전달</title>
+<style type="text/css">
+div, p {
+	border: 3px solid gray;
+	padding: 15px;
+}
+</style>
+<script type="text/javascript">
+	function click1() {
+		alert('밖의 DIV');
+	}
+	function click2(e) {
+		var event = e || window.event;
+		alert('안의 DIV');
+		event.cancelBubble = true;
+		if (event.stopPropagation) {
+			event.stopPropagation();
+		}
+	}
+	function click3(e) {
+		var event = e || window.event;
+		alert('나는 문단');
+		event.cancelBubble = true;
+		if (event.stopPropagation) {
+			event.stopPropagation();
+		}
+	}
+</script>
+</head>
+<body>
+	<!-- 아래의 코드는 이벤트 버블이 발생하여 안쪽의 이벤트 발생시 바깥쪽의 이벤트도 전부 실행된다. -->
+	<div onclick='alert("밖의 DIV")'>
+		밖의 DIV
+		<div onclick='alert("안의 DIV")'>
+			안의 DIV
+			<p onclick='alert("나는 문단")'>나는 문단</p>
+		</div>
+	</div>
+	<!-- script에서 이벤트 버블을 중단시킨것으로 발생시킨 이벤트만 실행된다. -->
+	<div onclick='click1()'>
+		밖의 DIV
+		<div onclick='click2()'>
+			안의 DIV
+			<p onclick='click3()'>나는 문단</p>
+		</div>
+	</div>
+</body>
+</html>

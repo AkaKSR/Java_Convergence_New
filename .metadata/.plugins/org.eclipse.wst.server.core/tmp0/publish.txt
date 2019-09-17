@@ -1,3 +1,3 @@
 #Tomcat publish data
-#Mon Sep 09 18:08:46 KST 2019
-org.eclipse.jst.jee.server\:JSP0909_maven=D\:\\Util\\Develop\\IDE\\spring-tool-suite-3.9.9.RELEASE-e4.12.0-win32-x86_64\\sts-bundle\\pivotal-tc-server\\instances\\base-instance\\wtpwebapps\\JSP0909_maven
+#Mon Sep 16 18:04:14 KST 2019
+org.eclipse.jst.jee.server\:JSP0916=D\:\\Util\\Develop\\IDE\\spring-tool-suite-3.9.9.RELEASE-e4.12.0-win32-x86_64\\sts-bundle\\pivotal-tc-server\\instances\\base-instance\\wtpwebapps\\JSP0916

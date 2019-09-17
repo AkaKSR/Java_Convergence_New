@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		// 스타일 지정
+		var color = ['red', 'green', 'purple']
+		$("h1").css('color', function(i) {
+			return color[i];
+		});
+		
+		// 스타일 얻기
+		$("h1").click(function() {
+			alert($(this).css('color'));
+		});
+	});
+</script>
+<style type="text/css">
+	.color1 {
+		color: red;
+	}
+	.color2 {
+		color: pink;
+	}
+	.color3 {
+		color: orange;
+	}
+</style>
+</head>
+<body>
+	<!--
+	h1[class=color$]{나는 어떤색!!!}*3
+	-->
+	<h1 class="color1">나는 어떤색!!!</h1>
+	<h1 class="color2">나는 어떤색!!!</h1>
+	<h1 class="color3">나는 어떤색!!!</h1>
+</body>
+</html>

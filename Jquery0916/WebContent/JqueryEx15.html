@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>추가 선택</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		// .add 추가선택하고 값을 객체로 지정
+		$("h1").css('background','pink').add('h2').css({'color':'blue', 'float':'left'});
+		// h1과 h2 태그반복
+		$("h1, h2").each(function() {
+			// 클래스 이름이 select를 가지고 있다면
+			if ($(this).is(".select")) {
+				// 배경색을 오렌지로 변경
+				$(this).css('background','orange');
+			}
+		});
+	});
+</script>
+</head>
+<body>
+	<!--
+	(h1{큰제목 $$}+h2{작은제목 $$})*3
+	-->
+	<h1>큰제목 01</h1>
+	<h2 class="select">작은제목 01</h2>
+	<h1>큰제목 02</h1>
+	<h2 class="select">작은제목 02</h2>
+	<h1 class="select">큰제목 03</h1>
+	<h2>작은제목 03</h2>
+</body>
+</html>

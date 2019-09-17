@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		// 속성을 제거한다.
+		$("h1").removeAttr("data-index");
+	});
+</script>
+</head>
+<body>
+	<!-- h1[date-index='$']{제목 $$}*4 -->
+	<h1 data-index="1">제목 01</h1>
+	<h1 data-index="2">제목 02</h1>
+	<h1 data-index="3">제목 03</h1>
+	<h1 data-index="4">제목 04</h1>
+</body>
+</html>

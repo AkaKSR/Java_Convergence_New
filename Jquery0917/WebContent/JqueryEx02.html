@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$("#btn").click(function() {
+			if($(this).text() == '숨겨줘') {
+				$("#box").hide();
+				$(this).text('보여줘');
+			} else {
+				$("#box").show();
+				$(this).text('숨겨줘');
+			}
+		});
+	});
+</script>
+<style type="text/css">
+	div {
+		width: 100px; height: 100px; background-color: silver; border: 1px solid gray;
+	}
+</style>
+</head>
+<body>
+<button id="btn">숨겨줘</button>
+<br><hr>
+<div id="box"></div>
+</body>
+</html>

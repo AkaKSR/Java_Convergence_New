@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$("tr:odd").css('background', 'pink'); // 홀수
+		$("tr:even").css('background', 'skyblue'); // 짝수
+		$("tr:first").css('background', 'gray'); // 첫번째
+		$("tr:last").css('background', 'yellow'); // 마지막
+	});
+</script>
+</head>
+<body>
+	<!-- 7행 4열의 표 만들기
+	table[border='1']>tr*7>td{데이터 $$}*4
+	 -->
+	<table border="1">
+		<tr>
+			<td>데이터 01</td>
+			<td>데이터 02</td>
+			<td>데이터 03</td>
+			<td>데이터 04</td>
+		</tr>
+		<tr>
+			<td>데이터 01</td>
+			<td>데이터 02</td>
+			<td>데이터 03</td>
+			<td>데이터 04</td>
+		</tr>
+		<tr>
+			<td>데이터 01</td>
+			<td>데이터 02</td>
+			<td>데이터 03</td>
+			<td>데이터 04</td>
+		</tr>
+		<tr>
+			<td>데이터 01</td>
+			<td>데이터 02</td>
+			<td>데이터 03</td>
+			<td>데이터 04</td>
+		</tr>
+		<tr>
+			<td>데이터 01</td>
+			<td>데이터 02</td>
+			<td>데이터 03</td>
+			<td>데이터 04</td>
+		</tr>
+		<tr>
+			<td>데이터 01</td>
+			<td>데이터 02</td>
+			<td>데이터 03</td>
+			<td>데이터 04</td>
+		</tr>
+		<tr>
+			<td>데이터 01</td>
+			<td>데이터 02</td>
+			<td>데이터 03</td>
+			<td>데이터 04</td>
+		</tr>
+	</table>
+</body>
+</html>

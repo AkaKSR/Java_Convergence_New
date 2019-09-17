@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		// 테그 생성
+		$("<h1></h1>").html("반갑다 JQuery!!!").appendTo("body");
+		$("<h1>반갑다 JQuery!!!</h1>").appendTo("body");
+		$("<img>").attr('src','images/sb0.png').appendTo("body");
+		$("<img>").attr('src','images/sd0.png').appendTo("body");
+		var index = 0;
+		setInterval(function() {
+			index = ++index%6;
+			$("img").eq(0).attr('src','images/sb' + index + '.png');
+			$("img").eq(1).attr('src','images/sd' + index + '.png');
+		}, 10);
+	});
+</script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -10,6 +10,37 @@
 		<item value="org.eclipse.ajdt:2.2.4.201805281636"/>
 		<item value="org.eclipse.cft.server.core.feature:1.2.3.v201805291812"/>
 		<item value="org.eclipse.cft.server.ui.feature:1.0.10.v201805291812"/>
+		<item value="org.eclipse.datatools.common.doc.user:1.14.100.201802022135"/>
+		<item value="org.eclipse.datatools.connectivity.doc.user:1.14.100.201802022135"/>
+		<item value="org.eclipse.datatools.connectivity.feature:1.14.100.201802212225"/>
+		<item value="org.eclipse.datatools.connectivity.oda.designer.core.feature:1.14.100.201801242337"/>
+		<item value="org.eclipse.datatools.connectivity.oda.designer.feature:1.14.100.201801242337"/>
+		<item value="org.eclipse.datatools.connectivity.oda.feature:1.14.100.201802212225"/>
+		<item value="org.eclipse.datatools.doc.user:1.14.100.201802022135"/>
+		<item value="org.eclipse.datatools.enablement.apache.derby.feature:1.14.100.201801242337"/>
+		<item value="org.eclipse.datatools.enablement.feature:1.14.100.201801242337"/>
+		<item value="org.eclipse.datatools.enablement.hsqldb.feature:1.14.100.201801242337"/>
+		<item value="org.eclipse.datatools.enablement.ibm.feature:1.14.100.201801242337"/>
+		<item value="org.eclipse.datatools.enablement.ingres.feature:1.14.100.201801242337"/>
+		<item value="org.eclipse.datatools.enablement.jdbc.feature:1.14.100.201801242337"/>
+		<item value="org.eclipse.datatools.enablement.jdt.feature:1.14.100.201801242337"/>
+		<item value="org.eclipse.datatools.enablement.msft.feature:1.14.100.201801242337"/>
+		<item value="org.eclipse.datatools.enablement.mysql.feature:1.14.100.201801242337"/>
+		<item value="org.eclipse.datatools.enablement.oda.designer.feature:1.14.100.201802061455"/>
+		<item value="org.eclipse.datatools.enablement.oda.feature:1.14.100.201802061455"/>
+		<item value="org.eclipse.datatools.enablement.oracle.feature:1.14.100.201801242337"/>
+		<item value="org.eclipse.datatools.enablement.postgresql.feature:1.14.100.201801242337"/>
+		<item value="org.eclipse.datatools.enablement.sap.feature:1.14.100.201801242337"/>
+		<item value="org.eclipse.datatools.enablement.sdk.feature:1.14.100.201802061819"/>
+		<item value="org.eclipse.datatools.enablement.sqlite.feature:1.14.100.201801242337"/>
+		<item value="org.eclipse.datatools.enablement.sybase.feature:1.14.100.201802061753"/>
+		<item value="org.eclipse.datatools.intro:1.14.100.201801242337"/>
+		<item value="org.eclipse.datatools.modelbase.feature:1.14.100.201802022135"/>
+		<item value="org.eclipse.datatools.sdk.feature:1.14.100.201801242337"/>
+		<item value="org.eclipse.datatools.sqldevtools.ddlgen.feature:1.14.100.201802061437"/>
+		<item value="org.eclipse.datatools.sqldevtools.feature:1.14.100.201802061753"/>
+		<item value="org.eclipse.datatools.sqldevtools.parsers.feature:1.14.100.201801242337"/>
+		<item value="org.eclipse.datatools.sqltools.doc.user:1.14.100.201802022135"/>
 		<item value="org.eclipse.draw2d:3.10.100.201606061308"/>
 		<item value="org.eclipse.egit.mylyn:5.0.0.201806131550-r"/>
 		<item value="org.eclipse.egit:5.0.0.201806131550-r"/>
@@ -123,6 +154,20 @@
 	<section name="ChooseWorkspaceDialogSettings">
 		<item value="580" key="DIALOG_X_ORIGIN"/>
 		<item value="274" key="DIALOG_Y_ORIGIN"/>
+	</section>
+	<section name="org.eclipse.ui.dialogs.FilteredResourcesSelectionDialog">
+		<item value="false" key="FilterByLocation"/>
+		<item value="true" key="ShowStatusLine"/>
+		<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0D;&#x0A;&lt;History&gt;&#x0D;&#x0A;&lt;historyRootNode/&gt;&#x0D;&#x0A;&lt;/History&gt;" key="History"/>
+		<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0D;&#x0A;&lt;workingSet workingSetName=&quot;&quot;/&gt;" key="WorkingSet"/>
+		<item value="false" key="ShowDerived"/>
+		<section name="DialogBoundsSettings">
+			<item value="600" key="DIALOG_WIDTH"/>
+			<item value="1|맑은 고딕|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕" key="DIALOG_FONT_NAME"/>
+			<item value="500" key="DIALOG_HEIGHT"/>
+			<item value="669" key="DIALOG_X_ORIGIN"/>
+			<item value="191" key="DIALOG_Y_ORIGIN"/>
+		</section>
 	</section>
 	<section name="SaveAsDialogSettings">
 		<item value="613" key="DIALOG_WIDTH"/>

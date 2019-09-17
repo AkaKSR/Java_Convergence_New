@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		for (i = 0; i < 6; i++) {
+			$("<img/>", {
+				src : 'images/sb' + i + '.png',
+				width : 100,
+				height : 50
+			}).appendTo('body');
+		}
+		setInterval(function() {
+			$("img").first().appendTo('body');
+		}, 100)
+	});
+</script>
+</head>
+<body>
+</body>
+</html>

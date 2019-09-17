@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>find()</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		// $("img").attr('alt', '그림입니다.');
+		$("img").attr('width', function(i) {
+			return (i+1)*50;
+		});
+		$("img").each(function(i) {
+			$(this).attr('alt',$(this).attr('src')+'입니다.');
+		});
+	});
+</script>
+</head>
+<body>
+	<img src="images/sb0.png"/><br>
+	<img src="images/sb1.png"/><br>
+	<img src="images/sb2.png"/><br>
+	<img src="images/sb3.png"/><br>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$("tr:eq(0)").css('background', 'silver').css('color', 'blue'); // 첫줄
+		$("td:nth-child(3n)").css('background', 'pink'); // 3의 배수
+		$("td:nth-child(3n+1)").css('background', 'skyblue'); // 3으로 나눈 나머지 1
+		$("td:nth-child(3n+2)").css('background', 'yellow'); // 3으로 나눈 나머지 2
+	});
+</script>
+</head>
+<body>
+	<!-- 7행 4열의 표 만들기
+	table[border='1']>tr*7>td{데이터 $$}*4
+	 -->
+	<table border="1">
+		<tr>
+			<td>데이터 01</td>
+			<td>데이터 02</td>
+			<td>데이터 03</td>
+			<td>데이터 04</td>
+		</tr>
+		<tr>
+			<td>데이터 01</td>
+			<td>데이터 02</td>
+			<td>데이터 03</td>
+			<td>데이터 04</td>
+		</tr>
+		<tr>
+			<td>데이터 01</td>
+			<td>데이터 02</td>
+			<td>데이터 03</td>
+			<td>데이터 04</td>
+		</tr>
+		<tr>
+			<td>데이터 01</td>
+			<td>데이터 02</td>
+			<td>데이터 03</td>
+			<td>데이터 04</td>
+		</tr>
+		<tr>
+			<td>데이터 01</td>
+			<td>데이터 02</td>
+			<td>데이터 03</td>
+			<td>데이터 04</td>
+		</tr>
+		<tr>
+			<td>데이터 01</td>
+			<td>데이터 02</td>
+			<td>데이터 03</td>
+			<td>데이터 04</td>
+		</tr>
+		<tr>
+			<td>데이터 01</td>
+			<td>데이터 02</td>
+			<td>데이터 03</td>
+			<td>데이터 04</td>
+		</tr>
+	</table>
+</body>
+</html>

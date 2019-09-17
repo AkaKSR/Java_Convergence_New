@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		var index = 1;
+		setInterval(function() {
+			++index;
+			if (index == 5)
+				index = 1;
+			$("img").eq(0).attr('src', "images/ship2_" + index + ".png");
+			$("img").eq(1).attr('src', "images/ship2_hit_" + index + ".png");
+		}, 100);
+	});
+</script>
+</head>
+<body>
+	<img src="images/ship2_1.png" />
+	<br>
+	<img src="images/ship2_hit_1.png" />
+	<br>
+</body>
+</html>

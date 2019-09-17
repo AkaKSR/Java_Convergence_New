@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$("[type]").css('border', '1px solid skyblue');
+		$("[type='password']").css('border', '1px solid pink');
+		$("[title~='asd']").css('background', 'pink'); // 단어로 포함
+		$("[title*='asd']").css('background', 'green'); // 해당 글자 포함
+		$("[title^='asd']").css('width', '200px'); // 해당 글자로 시작
+		$("[title$='qwer']").css('width', '400px'); // 해당 글자로 시작
+	});
+</script>
+</head>
+<body>
+	<!-- 
+		(input[type='text']+br)*5
+	 -->
+	 <input type="text" title="asdf"/>
+	 <br />
+	 <input type="password" title="asdf asd"/>
+	 <br />
+	 <input type="text" title="asdf asdqwe"/>
+	 <br />
+	 <input type="text" title="asdf qwer"/>
+	 <br />
+	 <input type="text" title="asf qwer"/>
+	 <br />
+</body>
+</html>

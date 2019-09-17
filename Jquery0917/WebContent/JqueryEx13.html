@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery 연습</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$("div").click(function() {
+			// alert($('h1').text() + "\n" + $('p').text());
+			// alert($('h1',this).text() + "\n" + $('p',this).text());
+			// alert($(this).text().trim());
+		});
+	});
+</script>
+<style type="text/css">
+	div {
+		border:1px solid gray;
+		border-radius: 20px;
+		margin: 10px;
+	}
+</style>
+</head>
+<body>
+	<!-- (div>h1{제목 $$}+p{문단 $$})*5 -->
+	<div>
+		<h1>제목 01</h1>
+		<p>문단 01</p>
+	</div>
+	<div>
+		<h1>제목 02</h1>
+		<p>문단 02</p>
+	</div>
+	<div>
+		<h1>제목 03</h1>
+		<p>문단 03</p>
+	</div>
+	<div>
+		<h1>제목 04</h1>
+		<p>문단 04</p>
+	</div>
+	<div>
+		<h1>제목 05</h1>
+		<p>문단 05</p>
+	</div>
+</body>
+</html>

@@ -1,5 +1,5 @@
 <%@page import="java.util.List"%>
-<%@page import="kr.green.cal.DateUtil"%>
+<%@page import="kr.green.test.DateUtil"%>
 <%@page import="kr.green.cal.LunarUtil"%>
 <%@page import="kr.green.cal.LunarVO"%>
 <%@page import="java.util.Calendar"%>

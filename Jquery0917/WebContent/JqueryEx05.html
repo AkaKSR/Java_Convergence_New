@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		// 값 넣기
+		$("div").html("<h2>난어디?</h2>");
+		// 값 얻어서 다른곳에 text로 넣기
+		$("h1").text($("div").html());
+		
+		$("#btn").click(function() {
+			$("#star").text($("#star").text() + "*");
+		});
+	});
+</script>
+</head>
+<body>
+	<button id="btn">늘어나라 별</button><br>
+	<span id="star">*</span>
+	<!-- div*3+h1*3 -->
+	<div></div>
+	<div></div>
+	<div></div>
+	<h1></h1>
+	<h1></h1>
+	<h1></h1>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+	window.onload = function() {
+		alert('반갑다!!! ---- 1');
+	}
+	window.onload = function() {
+		alert('반갑다!!! ---- 2');
+	}
+	// window.onload와 같다.
+	$(document).ready(function() {
+		alert('반갑다!!! ---- 3');
+	});
+	$(document).ready(function() {
+		alert('반갑다!!! ---- 4');
+	});
+	// 위의 축약형
+	$(function() {
+		alert('반갑다!!! ---- 5');
+	});
+</script>
+</head>
+<body>
+	<h1>반갑다 JQuery!!!</h1>
+</body>
+</html>

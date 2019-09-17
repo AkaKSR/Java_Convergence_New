@@ -1,0 +1,35 @@
+{
+	"folders": {},
+	"connections": {
+		"mariaDB-16d3db377e1-db1dd7d9f878891": {
+			"provider": "mysql",
+			"driver": "mariaDB",
+			"name": "MariaDB - root",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"host": "localhost",
+				"port": "3306",
+				"database": "mysql",
+				"url": "jdbc:mysql://localhost:3306/mysql",
+				"type": "dev",
+				"handlers": {}
+			}
+		},
+		"mariaDB-16d3db3e1c2-d841c1307eb235a": {
+			"provider": "mysql",
+			"driver": "mariaDB",
+			"name": "MariaDB - jspdb",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"host": "localhost",
+				"port": "3306",
+				"database": "jspdb",
+				"url": "jdbc:mysql://localhost:3306/jspdb",
+				"type": "dev",
+				"handlers": {}
+			}
+		}
+	}
+}

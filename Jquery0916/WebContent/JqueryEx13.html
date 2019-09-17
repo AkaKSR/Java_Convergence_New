@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>필터의 사용</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		// 요소 선택자 사용
+		$("h1:even").css('color', 'white').css('background', 'black');
+		// 필터 이용
+		$("h1").filter(":odd").css('color', 'yellow').css('background', 'black');
+		// 필터 활용
+		$("h1").filter(function(index) {
+			return index%3==0;
+		}).css('color', 'blue');
+	});
+</script>
+</head>
+<body>
+	<h1>제목 1</h1>
+	<h1>제목 2</h1>
+	<h1>제목 3</h1>
+	<h1>제목 4</h1>
+	<h1>제목 5</h1>
+</body>
+</html>

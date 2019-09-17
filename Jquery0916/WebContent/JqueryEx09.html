@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		var ar = [
+			{"name":"다음", "link":"http://www.daum.net"},
+			{"name":"네이버", "link":"http://www.naver.com"},
+			{"name":"구글", "link":"http://www.google.co.kr"},
+			{"name":"네이트", "link":"http://www.nate.com"}
+		];
+			var result = "";
+		// index 순서에는 item 객체가 넘어온다.
+		$.each(ar, function(index, item) {
+			// result += "<a href='" + item.link + "'>" + item.name + "</a><br>";
+			result += "<a href='" + ar[index].link + "'>" + ar[index].name + "</a><br>";
+		});
+		// $("#result").text(result); // JavaScript에서는 innerText와 동일
+		$("#result").html(result); // JavaScriptwe에서는 innerHtml과 동일
+	});
+</script>
+</head>
+<body>
+	<a href="http://www.daum.net">다음</a><br>
+	<a href="http://www.naver.com">네이버</a><br>
+	<a href="http://www.google.co.kr">구글</a><br>
+	<a href="http://www.nate.com">네이트</a><br>
+	<div id="result" style="border: 1px solid gray;"></div>
+</body>
+</html>

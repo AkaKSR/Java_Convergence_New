@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<University>
+    <name>공과대학</name>
+    <address>대전</address>
+    <Students>
+        <Student no="1">
+            <name>한사람</name>
+            <addr>서울</addr>
+            <regDate>2019년 09월 11일(수) 11시 31분 38.251초</regDate>
+        </Student>
+        <Student no="2">
+            <name>두사람</name>
+            <addr>대구</addr>
+            <regDate>2019년 09월 11일(수) 11시 31분 38.251초</regDate>
+        </Student>
+        <Student no="3">
+            <name>세사람</name>
+            <addr>광주</addr>
+            <regDate>2019년 09월 11일(수) 11시 31분 38.251초</regDate>
+        </Student>
+        <Student no="4">
+            <name>네사람</name>
+            <addr>인천</addr>
+            <regDate>2019년 09월 11일(수) 11시 31분 38.251초</regDate>
+        </Student>
+    </Students>
+</University>

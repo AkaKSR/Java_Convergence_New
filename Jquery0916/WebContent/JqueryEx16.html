@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>find()</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+	var xml = "";
+	xml += "<computers>";
+	xml += "	<computer>";
+	xml += "		<cpu>386</cpu>";
+	xml += "		<ram>16GB</ram>";
+	xml += "	</computer>";
+	xml += "	<computer>";
+	xml += "		<cpu>486</cpu>";
+	xml += "		<ram>32GB</ram>";
+	xml += "	</computer>";
+	xml += "	<computer>";
+	xml += "		<cpu>586</cpu>";
+	xml += "		<ram>64GB</ram>";
+	xml += "	</computer>";
+	xml += "	<computer>";
+	xml += "		<cpu>686</cpu>";
+	xml += "		<ram>128GB</ram>";
+	xml += "	</computer>";
+	xml += "</computers>";
+	$(function() {
+		var xmlDoc = $.parseXML(xml); // XML문서 파싱
+		// computer 태그를 찾아서 반복
+		$(xmlDoc).find('computer').each(function(i) {
+			// 컴퓨터에서 cpu를 찾아 값을 출력
+			document.write(i+1 + ". " + $(this).find('cpu').text() + "(");
+			// 컴퓨터에서 ram을 찾아 값을 출력
+			document.write($(this).find('ram').text() + ")<br><hr>");
+		});
+	});
+</script>
+</head>
+<body>
+	
+</body>
+</html>

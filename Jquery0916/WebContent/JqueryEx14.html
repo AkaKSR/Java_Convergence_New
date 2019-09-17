@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>필터의 사용(탐색 종료)</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$("h3").css('background', 'pink').filter(":even").css('color', 'red')
+				.end() // 이전 필터 무력화
+				.filter(":odd").css('color', 'blue');
+		
+		$("h3").first().css('color','green'); // 첫번째
+		$("h3").last().css('color','green'); // 마지막
+		$("h3").eq(4).css('color','green'); // 5번째
+		$("h3").eq(-1).css('color','yellow'); // 마지막
+	});
+</script>
+</head>
+<body>
+	<h3>제목 001</h3>
+	<h3>제목 002</h3>
+	<h3>제목 003</h3>
+	<h3>제목 004</h3>
+	<h3>제목 005</h3>
+	<h3>제목 006</h3>
+	<h3>제목 007</h3>
+	<h3>제목 008</h3>
+	<h3>제목 009</h3>
+	<h3>제목 010</h3>
+</body>
+</html>
