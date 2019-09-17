@@ -2,6 +2,8 @@
 # Requirement
 <b>Tools</b><br>
 Spring Tool Suite(Eclipse)
+Apache Tomcat(Server)
+Pivotal tc(sts default server)
 
 <b>Use Language</b><br>
 1. Java
