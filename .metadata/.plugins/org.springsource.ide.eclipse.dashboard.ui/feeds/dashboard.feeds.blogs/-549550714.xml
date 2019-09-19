@@ -67,6 +67,54 @@
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
   <entry>
+    <title>Spring Batch 4.2.0.RC1 is released!</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/09/17/spring-batch-4-2-0-rc1-is-released" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Mahmoud Ben Hassine</name>
+    </author>
+    <id>tag:spring.io,2019-09-09:3792</id>
+    <updated>2019-09-17T12:22:00Z</updated>
+    <content type="html">&lt;p&gt;On behalf of the Spring Batch team, I am pleased to announce the release of Spring Batch 4.2.0.RC1. We have been working on some performance improvements in the core framework, and this post highlights the major changes.&lt;/p&gt;&lt;h2&gt;&lt;a href="#major-performance-improvements" class="anchor" name="major-performance-improvements"&gt;&lt;/a&gt;Major Performance Improvements&lt;/h2&gt;
+&lt;p&gt;We have made some performance improvements, including:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="#enhanced-step-partitioning"&gt;Enhanced Step Partitioning&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#improved-job-stop"&gt;Improved Job Stop&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#faster-writes-with-the-jpaitemwriter"&gt;Faster Writes with the &lt;code&gt;JpaItemWriter&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#optimized-bean-mapping-with-the-beanwrapperfieldsetmapper"&gt;Optimized Bean Mapping with the &lt;code&gt;BeanWrapperFieldSetMapper&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;a name="enhanced-step-partitioning"&gt;&lt;/a&gt;&lt;h3&gt;&lt;a href="#enhanced-step-partitioning" class="anchor" name="enhanced-step-partitioning"&gt;&lt;/a&gt;Enhanced Step Partitioning&lt;/h3&gt;
+&lt;p&gt;Starting a partitioned step is an area where the framework wasn&amp;rsquo;t well optimized. In this version, we have dug deep into the partitioning process to figure out the root cause of this performance issue. One of the main steps of the partitioning process is to find the last step execution (to see if the current execution is a restart). We found that looking up the last step execution involved loading all step executions from all job executions for a given job instance in-memory, which is obviously inefficient!&lt;/p&gt;
+&lt;p&gt;We replaced this code with a SQL query that does the lookup at the database level, to return only the last step execution. The results are outstanding: Partitioning a step execution into 5000 partitions is almost 10x faster with this approach, according to our benchmark &lt;a href="#footnotes"&gt;partitioned-step-benchmark&lt;/a&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/benas/spring-batch-sandbox/master/batch2716/perf-partitioning.png" alt="perf-partitioning" /&gt;&lt;/p&gt;
+&lt;a name="improved-job-stop"&gt;&lt;/a&gt;&lt;h3&gt;&lt;a href="#improved-job-stop" class="anchor" name="improved-job-stop"&gt;&lt;/a&gt;Improved Job Stop&lt;/h3&gt;
+&lt;p&gt;Things can go wrong when running a job.. and gracefully stopping a destructive job should be fast and efficient in order to avoid data corruption. Up until v4.1, stopping a job using the &lt;code&gt;CommandLineJobRunner&lt;/code&gt; suffered from a poor performance, due to loading all job executions in memory in order to find whether a job execution is currently running. With this approach, stopping a job can take minutes with a production database that has thousands of job executions in it!&lt;/p&gt;
+&lt;p&gt;In this release, we optimized the stop process by using a SQL query that does the filtering at the database level. Again, the results are impressive: With 100.000 job executions of a given job in the database, stopping the job is almost 40x faster with this approach, according to our benchmark &lt;a href="#footnotes"&gt;stop-benchmark&lt;/a&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/benas/spring-batch-sandbox/master/batch2422/perf-stop.png" alt="perf-stop" /&gt;&lt;/p&gt;
+&lt;a name="faster-writes-with-the-jpaitemwriter"&gt;&lt;/a&gt;&lt;h3&gt;&lt;a href="#faster-writes-with-the-code-jpaitemwriter-code" class="anchor" name="faster-writes-with-the-code-jpaitemwriter-code"&gt;&lt;/a&gt;Faster Writes with the &lt;code&gt;JpaItemWriter&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;The &lt;code&gt;JpaItemWriter&lt;/code&gt; uses the &lt;code&gt;javax.persistence.EntityManager#merge&lt;/code&gt; function to write items in a JPA persistence context. This makes sense when the persistent state of items is unknown or known to be an update. However, in many file ingestion jobs where data is known to be new and should be considered as inserts, using &lt;code&gt;javax.persistence.EntityManager#merge&lt;/code&gt; is not efficient.&lt;/p&gt;
+&lt;p&gt;In this release, we introduced a new option in the &lt;code&gt;JpaItemWriter&lt;/code&gt; to use &lt;code&gt;persist&lt;/code&gt; rather than &lt;code&gt;merge&lt;/code&gt; in such scenarios. With this new option, a file ingestion job that uses the &lt;code&gt;JpaItemWriter&lt;/code&gt; to insert 1 million items in a database is 2x faster according to our benchmark &lt;a href="#footnotes"&gt;jpa-writer-benchmark&lt;/a&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/benas/spring-batch-sandbox/master/batch2462/perf-jpaitemwriter.png" alt="perf-jpaitemwriter" /&gt;&lt;/p&gt;
+&lt;a name="optimized-bean-mapping-with-the-beanwrapperfieldsetmapper"&gt;&lt;/a&gt;&lt;h3&gt;&lt;a href="#optimized-bean-mapping-with-the-code-beanwrapperfieldsetmapper-code" class="anchor" name="optimized-bean-mapping-with-the-code-beanwrapperfieldsetmapper-code"&gt;&lt;/a&gt;Optimized Bean Mapping with the &lt;code&gt;BeanWrapperFieldSetMapper&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;The &lt;code&gt;BeanWrapperFieldSetMapper&lt;/code&gt; provides a nice feature that lets us use fuzzy matching of field names of a given JavaBean (Camel case, nested properties, and so on). However, when field names match column names, exact matching can be enabled by setting the &lt;code&gt;distanceLimit&lt;/code&gt; parameter to 0.&lt;/p&gt;
+&lt;p&gt;In this release, we fixed a performance issue in the &lt;code&gt;BeanWrapperFieldSetMapper&lt;/code&gt; that was introspecting field names by using reflection on each iteration, even when exact matching was requested (by setting &lt;code&gt;distanceLimit=0&lt;/code&gt;). The result is that item mapping is now 1.5x faster than the previous version according to our JMH benchmark [bean-mapping-benchmark (#footnotes):&lt;/p&gt;
+&lt;p align="center"&gt;&#xD;
+&lt;img src="https://raw.githubusercontent.com/benas/spring-batch-sandbox/master/batch1801/perf-mapping.png" alt="perf-mapping"&gt;&#xD;
+&lt;/p&gt;&lt;h2&gt;&lt;a href="#feedback" class="anchor" name="feedback"&gt;&lt;/a&gt;Feedback&lt;/h2&gt;
+&lt;p&gt;Please note that these numbers may vary in your case. We encourage you to try out Spring Batch 4.2.0.RC1 (which can be consumed with Spring Boot 2.2.0.M6) and share your feedback. Please refer to the change log of version &lt;a href="https://jira.spring.io/secure/ReleaseNote.jspa?projectId=10090&amp;version=17487"&gt;4.2.0.RC1&lt;/a&gt; and &lt;a href="https://jira.spring.io/secure/ReleaseNote.jspa?projectId=10090&amp;version=17628"&gt;4.2.0.M3&lt;/a&gt; for the complete list of changes.&lt;/p&gt;
+&lt;p&gt;Feel free to ping &lt;a href="https://www.twitter.com/michaelminella"&gt;@michaelminella&lt;/a&gt; or &lt;a href="https://www.twitter.com/b_e_n_a_s"&gt;@b_e_n_a_s&lt;/a&gt; on Twitter or to ask your question on &lt;a href="https://stackoverflow.com/questions/tagged/spring-batch"&gt;StackOverflow&lt;/a&gt; or &lt;a href="https://gitter.im/spring-batch/Lobby"&gt;Gitter&lt;/a&gt;. If you find any issue, please open a ticket on &lt;a href="https://jira.spring.io/projects/BATCH/"&gt;Jira&lt;/a&gt;.&lt;/p&gt;&lt;h2&gt;&lt;a href="#what-rsquo-s-next" class="anchor" name="what-rsquo-s-next"&gt;&lt;/a&gt;What&amp;rsquo;s next&lt;/h2&gt;
+&lt;p&gt;We plan to stabilize this new release candidate for the upcoming Spring Batch 4.2.0.RELEASE planned for September 30th, 2019. Stay tuned!&lt;/p&gt;&lt;h2&gt;&lt;a href="#footnotes" class="anchor" name="footnotes"&gt;&lt;/a&gt;Footnotes&lt;/h2&gt;
+&lt;p&gt;All benchmarks have been performed on a Macbook Pro 16Go RAM, 2.9 GHz Intel Core i7 CPU, MacOS Mojave 10.14.5, Oracle JDK 1.8.0_201. You can find the source code of all benchmarks in the following links:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;partitioned-step-benchmark: &lt;a href="https://github.com/benas/spring-batch-sandbox/tree/master/batch2716"&gt;https://github.com/benas/spring-batch-sandbox/tree/master/batch2716&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;stop-benchmark: &lt;a href="https://github.com/benas/spring-batch-sandbox/tree/master/batch2422"&gt;https://github.com/benas/spring-batch-sandbox/tree/master/batch2422&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;jpa-writer-benchmark: &lt;a href="https://github.com/benas/spring-batch-sandbox/tree/master/batch2462"&gt;https://github.com/benas/spring-batch-sandbox/tree/master/batch2462&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;bean-mapping-benchmark: &lt;a href="https://github.com/benas/spring-batch-sandbox/tree/master/batch1801"&gt;https://github.com/benas/spring-batch-sandbox/tree/master/batch1801&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href="https://spring.io/projects/spring-batch"&gt;Spring Batch Home&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-batch"&gt;Source on GitHub&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-batch/4.2.x/reference/html/index.html"&gt;Reference Documentation&lt;/a&gt;&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
     <title>This Week in Spring - Sept 17, 2019</title>
     <link rel="alternate" href="https://spring.io/blog/2019/09/17/this-week-in-spring-sept-17-2019" />
     <category term="engineering" label="Engineering" />
@@ -1136,31 +1184,6 @@ And let us know what you think!&lt;/p&gt;
   &lt;li&gt;&lt;a href="http://Dataflow.Spring.io"&gt;your resource for getting started with Spring Cloud Data Flow&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/672686666&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"&gt;&lt;/iframe&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>This Week in Spring - August 27, 2019</title>
-    <link rel="alternate" href="https://spring.io/blog/2019/08/27/this-week-in-spring-august-27-2019" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2019-08-27:3781</id>
-    <updated>2019-08-27T08:07:21Z</updated>
-    <content type="html">&lt;p&gt;Hi Spring fans! Welcome to another installment of &lt;em&gt;This Week in Spring!&lt;/em&gt; As I write this I&amp;rsquo;m in beautiful Bangalore, India, stuck in a monster of a traffic jam trying to make it to another meeting. I&amp;rsquo;m so elated to be here to connect with amazing people and organizations. I&amp;rsquo;m also excited that, this week, I&amp;rsquo;ll be speaking at the Bangalore Java User Group. Please, &lt;a href="https://www.meetup.com/BangaloreOpenJUG/events/264306790/"&gt;come out and say hi&lt;/a&gt;! &lt;/p&gt;
-&lt;p&gt;As usual, we&amp;rsquo;ve got a lot to cove so let&amp;rsquo;s get to it! &lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;I loved recording last week&amp;rsquo;s installment of &lt;a href="https://spring.io/blog/2019/08/23/a-bootiful-podcast-google-s-james-ward-okta-s-matt-raible-and-grand-cloud-s-ryan-knight-on-the-simplicity-continuum"&gt;&lt;em&gt;A Bootiful Podcast&lt;/em&gt; wherein I got to talk to Google&amp;rsquo;s James Ward, Okta&amp;rsquo;s Matt Raible and Grand Cloud&amp;rsquo;s Ryan Knight on the Simplicity Continuum&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/08/23/spring-boot-for-apache-geode-pivotal-gemfire-1-1-0-release-1-2-0-m1-released"&gt;Spring Boot for Apache Geode &amp;amp; Pivotal GemFire 1.1.0.RELEASE &amp;amp; 1.2.0.M1 Released!&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.instana.com/blog/collecting-custom-micrometer-metrics-has-never-been-easier/"&gt;Collecting Custom Micrometer metrics has never been easier - Instana&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://medium.com/swlh/deploying-spring-boot-applications-15e14db25ff0"&gt;Deploying Spring Boot Applications - The Startup - Medium&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://medium.com/nexocode/smooth-implementation-of-cqrs-es-with-spring-boot-and-axon-framework-26cc22e53a7f"&gt;Smooth implementation of CQRS/ES with Spring Boot and Axon framework&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://m.youtube.com/watch?index=1&amp;v=YyE8fyYJsbE&amp;list=PLjXUjSTUHs0SBkPlUEnkXcDqQKlyUOyAS&amp;t=105s"&gt;How To Keep the Layers of your Spring App Separate using Integration Tests - YouTube&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://ccbill.com/blog/spring-boot-and-context-handling"&gt;Spring Boot And Context Handling&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://investors.pivotal.io/news/financial-news/default.aspx"&gt;Pivotal has entered into an agreement to be accquired by VMWare&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://vladmihalcea.com/why-should-not-use-the-auto-jpa-generationtype-with-mysql-and-hibernate/"&gt;Why should not use the AUTO JPA GenerationType with MySQL and Hibernate - Vlad Mihalcea&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;The Baeldung blog has an interesting post on using &lt;a href="https://www.baeldung.com/jhipster-authentication-external-service"&gt;JHipster (which is based on Spring Boot and which in turn uses Spring Security) to externally authenticate&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>
