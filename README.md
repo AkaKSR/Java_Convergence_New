@@ -1,7 +1,9 @@
 # Java_Convergence_New
 # Requirement
 <b>Tools</b><br>
-Spring Tool Suite(Eclipse)
+Spring Tool Suite(Eclipse)<br>
+Apache Tomcat(Server)<br>
+Pivotal tc(sts default server)
 
 <b>Use Language</b><br>
 1. Java
@@ -33,13 +35,15 @@ Spring Tool Suite(Eclipse)
 1. UTF-8
 
 <b>AkaKSR's Spec</b><br>
-1. Windows BatchScript intermediate
-2. Network Maintenence intermediate
-3. Java Beginner
-4. JSP Beginner
-5. JavaScript Beginner
-6. JSTL&EL Beginner
-7. HTML Beginner
+1. Windows Maintenense intermediate
+2. Windows BatchScript intermediate
+3. Network Maintenence intermediate
+4. Java Beginner
+5. JSP Beginner
+6. JavaScript Beginner
+7. JSTL&EL Beginner
+8. HTML Beginner
+9. DBMS Beginner
 
 <b>Program produced</b>
 1. sdvEditor CLI&GUI(Stardew Valley Save Editor)
