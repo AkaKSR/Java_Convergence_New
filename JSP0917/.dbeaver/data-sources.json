@@ -1,21 +1,6 @@
 {
 	"folders": {},
 	"connections": {
-		"mariaDB-16d3db377e1-db1dd7d9f878891": {
-			"provider": "mysql",
-			"driver": "mariaDB",
-			"name": "MariaDB - root",
-			"save-password": true,
-			"read-only": false,
-			"configuration": {
-				"host": "localhost",
-				"port": "3306",
-				"database": "mysql",
-				"url": "jdbc:mysql://localhost:3306/mysql",
-				"type": "dev",
-				"handlers": {}
-			}
-		},
 		"mariaDB-16d3db3e1c2-d841c1307eb235a": {
 			"provider": "mysql",
 			"driver": "mariaDB",
@@ -27,6 +12,37 @@
 				"port": "3306",
 				"database": "jspdb",
 				"url": "jdbc:mysql://localhost:3306/jspdb",
+				"type": "dev"
+			}
+		},
+		"mariaDB-16d42d54a0b-325020e73f99e300": {
+			"provider": "mysql",
+			"driver": "mariaDB",
+			"name": "MariaDB - jspdb 2",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"host": "localhost",
+				"port": "3306",
+				"database": "jspdb",
+				"url": "jdbc:mysql://localhost:3306/jspdb",
+				"home": "C:\\Program Files\\MariaDB 10.4",
+				"type": "dev",
+				"handlers": {}
+			}
+		},
+		"mariaDB-16d42d776cb-63a7c786e91552a5": {
+			"provider": "mysql",
+			"driver": "mariaDB",
+			"name": "MariaDB - jspdb 3",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"host": "localhost",
+				"port": "3306",
+				"database": "jspdb",
+				"url": "jdbc:mysql://localhost:3306/jspdb",
+				"home": "C:\\Program Files\\MariaDB 10.4",
 				"type": "dev",
 				"handlers": {}
 			}

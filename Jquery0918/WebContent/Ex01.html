@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Jquery 연습</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$('a').click(function(event) {
+			$(this).css('background-color', 'skyblue');
+			// 기본 이벤트 취소
+			// event.preventDefault();
+			// 이벤트 전달  취소
+			// event.stopPropagation();
+			// 위의 두가지를 한번에 적용
+			return false;
+		});
+		$('h1').click(function(event) {
+			$(this).css('background-color', 'pink');
+		});
+	});
+</script>
+<style type="text/css">
+	* {
+		margin: 5px; padding: 5px; border: 3px solid gray;
+	}
+</style>
+</head>
+<body>
+	<h1><a href="https://www.naver.com">네이버</a></h1>
+</body>
+</html>

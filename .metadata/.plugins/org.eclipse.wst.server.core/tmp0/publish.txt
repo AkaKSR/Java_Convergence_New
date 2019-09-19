@@ -1,3 +1,4 @@
 #Tomcat publish data
-#Mon Sep 16 18:04:14 KST 2019
-org.eclipse.jst.jee.server\:JSP0916=D\:\\Util\\Develop\\IDE\\spring-tool-suite-3.9.9.RELEASE-e4.12.0-win32-x86_64\\sts-bundle\\pivotal-tc-server\\instances\\base-instance\\wtpwebapps\\JSP0916
+#Wed Sep 18 18:10:57 KST 2019
+org.eclipse.jst.jee.server\:JSP0918_test=D\:\\Util\\Develop\\IDE\\spring-tool-suite-3.9.9.RELEASE-e4.12.0-win32-x86_64\\sts-bundle\\pivotal-tc-server\\instances\\base-instance\\wtpwebapps\\JSP0918_test
+org.eclipse.jst.jee.server\:JSP0918=D\:\\Util\\Develop\\IDE\\spring-tool-suite-3.9.9.RELEASE-e4.12.0-win32-x86_64\\sts-bundle\\pivotal-tc-server\\instances\\base-instance\\wtpwebapps\\JSP0918

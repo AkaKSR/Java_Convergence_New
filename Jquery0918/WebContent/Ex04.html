@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Jquery 연습</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$("#allCheck").change(function() {
+			if($(this).is(":checked")) {
+				$("#check_item").children().children().attr('checked', true);
+			} else {
+				$("#check_item").children().children().attr('checked', false);
+			}
+		});
+	});
+</script>
+</head>
+<body>
+	<label>전체선택 <input type="checkbox" id="allCheck" /></label>
+	<br><hr>
+	<div id="check_item">
+		<label><input type="checkbox"/>A Option</label><br>
+		<label><input type="checkbox"/>B Option</label><br>
+		<label><input type="checkbox"/>C Option</label><br>
+		<label><input type="checkbox"/>D Option</label><br>
+	</div>
+</body>
+</html>
